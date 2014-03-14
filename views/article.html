@@ -1,0 +1,24 @@
+<header class="sub rank">
+    <button class="menu" ng-click="toggle($event)"></button>
+    <form class="dropdown">
+        <div class="field">
+            <label for="bias">Bias</label>
+            <input type="range" min="1" max="10" id="bias" ng-model="feedback.bias"/>
+        </div>
+
+        <div class="field">
+            <label for="quality">Quality</label>
+            <input type="range" min="1" max="10" id="quality" ng-model="feedback.quality"/>
+        </div>
+
+        <div class="field">
+            <label for="relevance">Relevance</label>
+            <input type="range" min="1" max="10" id="relevance" ng-model="feedback.relevance"/>
+        </div>
+        <input type="submit" value="Submit" ng-click="submit()"/>
+    </form>
+
+</header>
+<div class="frame-container">
+    <object type="text/html" data="{{url}}"><embed ng-src="{{url}}"></embed></object>
+</div>

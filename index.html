@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="topnews">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <title>News Grade</title>
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/stylesheets/app.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.12/angular-route.min.js"></script>
+
+    <script src="build/news.min.js"></script>
+
+    <!--<script src="/AppController.js"></script>
+    <script src="/controllers/OrgController.js"></script>
+    <script src="/controllers/FeedsController.js"></script>
+    <script src="/controllers/ArticleController.js"></script>
+
+    <script src="/factories/OrgFactory.js"></script>
+    <script src="/factories/FeedsFactory.js"></script>
+    <script src="/factories/ArticleFactory.js"></script>-->
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <a href="/#/">
+            <img src="logos/newsrank.png">
+            <h1><span class="yellow">news</span><span class="gray">grade</span></h1>
+        </a>
+    </div>
+</header>
+
+<div ng-view class="view-container"></div>
+
+
+
+</body>
+</html>

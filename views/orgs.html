@@ -1,0 +1,36 @@
+<div class="page-container">
+    <header class="sub toolbar">
+        <span class="toggle">
+            <button class="selected" ng-click="toggle($event, 'orgs')">Organization</button>
+            <button ng-click="toggle($event, 'rank')">Rank</button>
+        </span>
+    </header>
+    <section id="orgs" class="toggle">
+        <a ng-repeat="org in orgs" href="/#/{{org.org_id}}/{{org.org_name}}">
+            <span class="helper"></span>
+            <img class ="org" ng-src="logos/{{org.org_id}}.png" alt="{{org.org_name}}">
+        </a>
+    </section>
+
+    <section id="rank" class="feed toggle">
+        <span class="options">
+            <label for="sortBy">Sort By:</label>
+            <select id="sortBy" ng-model="sortBy">
+                <option value="avgRank">Average</option>
+                <option value="bias">Bias</option>
+                <option value="quality">Quality</option>
+                <option value="relevance">Relevance</option>
+                <option value="popularity">Popularity</option>
+            </select>
+        </span>
+        <a class="article" ng-click="setCurrentArticle(article)" ng-repeat="article in articles | orderBy : sortBy : true">
+            <article>
+                <h2>{{article.title}}</h2>
+                <div class="date">{{article.publishedDate | date:'medium'}}</div>
+
+                <img ng-if="article.mediaGroups.length > 0" ng-src="{{article.mediaGroups[0].contents[0].url}}"/>
+                <span class="snippet">{{article.contentSnippet}}</span>
+            </article>
+        </a>
+    </section>
+</div>

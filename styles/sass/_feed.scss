@@ -1,0 +1,95 @@
+&.feed {
+
+  header {
+    padding: .5rem;
+    background: $black;
+    color: $yellow;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    border-bottom: none;
+
+    &:hover {
+      background: $yellow;
+      color: $black;
+    }
+
+    &.expandable.expanded {
+      background: $yellow;
+      color: $black;
+    }
+
+    &.expandable:before {
+      content: '\2799';
+      font-weight: bold;
+      margin: 0 1rem;
+      font-size: 1.5rem;
+    }
+    &.expandable.expanded:before {
+      -webkit-transition:all cubic-bezier(0,0,1,1) .1s;
+      transition:all cubic-bezier(0,0,1,1) .1s;
+      content: '\2799';
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      display: inline-block;
+    }
+    &.expandable.collapsed:before {
+      content: '\2799';
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      display: inline-block;
+      -webkit-transition:all cubic-bezier(0,0,1,1) .1s;
+      transition:all cubic-bezier(0,0,1,1) .1s;
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+    }
+
+    h1 {
+      padding: 0;
+      margin: 0;
+      font-size: 1.5rem;
+      border: none;
+      display: inline-block;
+    }
+  }
+
+  article {
+    background: $black;
+    color: $white;
+    margin: 0 0 1rem 2rem;
+    padding: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background: $yellow;
+      color: $black;
+
+      h2 {
+        color: $black;
+      }
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      color: $yellow;
+    }
+    .date {
+      font-size: .9rem;
+      margin-bottom: .5rem;
+    }
+    img {
+      display: inline-block;
+      max-width: 8rem;
+      border: 2px solid $gray
+
+    }
+    .snippet {
+      display: inline-block;
+      max-width: 27rem;
+      vertical-align: top;
+      margin-left: .5rem;
+    }
+  }
+}

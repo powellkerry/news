@@ -1,13 +1,12 @@
 var app = angular.module('topnews');
 
 app.factory('ArticleFactory', function ($http) {
-    var currentArticle = null;
     return {
         setCurrentArticle: function (article) {
-            currentArticle = article;
+            window.localStorage.setItem('currentArticle', JSON.stringify(article));
         },
         getCurrentArticle: function () {
-            return currentArticle;
+            return JSON.parse(window.localStorage.getItem('currentArticle'));
         },
         loadArticles: function (callback) {
             $http.get('server/request.php?action=loadArticles').success(callback);

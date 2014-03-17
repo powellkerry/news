@@ -312,12 +312,13 @@ html body div.ng-scope section {
 /* line 67, ../sass/app.scss */
 html body div.ng-scope section#orgs {
   text-align: center;
+  width: 100%;
 }
-/* line 70, ../sass/app.scss */
+/* line 71, ../sass/app.scss */
 html body div.ng-scope section.toggle {
   display: none;
 }
-/* line 73, ../sass/app.scss */
+/* line 74, ../sass/app.scss */
 html body div.ng-scope section.toggle:first-of-type {
   display: inherit;
 }
@@ -331,7 +332,21 @@ html body div.ng-scope section .options {
   box-sizing: border-box;
 }
 /* line 9, ../sass/_options.scss */
-html body div.ng-scope section .options:before {
+html body div.ng-scope section .options label {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+/* line 14, ../sass/_options.scss */
+html body div.ng-scope section .options.search {
+  max-width: 40rem;
+  text-align: left;
+}
+/* line 18, ../sass/_options.scss */
+html body div.ng-scope section .options.search input[type=search] {
+  width: 85%;
+}
+/* line 25, ../sass/_options.scss */
+html body div.ng-scope section .options:not(.search):before {
   width: 0;
   height: 0;
   display: inline-block;
@@ -346,13 +361,8 @@ html body div.ng-scope section .options:before {
   z-index: -1;
   -webkit-margin-before: .1rem;
 }
-/* line 25, ../sass/_options.scss */
-html body div.ng-scope section .options label {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-/* line 30, ../sass/_options.scss */
-html body div.ng-scope section .options select {
+/* line 41, ../sass/_options.scss */
+html body div.ng-scope section .options:not(.search) select {
   background: #3c3c3c;
   color: #fec71c;
   border: none;
@@ -361,8 +371,8 @@ html body div.ng-scope section .options select {
   width: 10rem;
   margin-left: 1rem;
 }
-/* line 40, ../sass/_options.scss */
-html body div.ng-scope section .options select option:hover {
+/* line 51, ../sass/_options.scss */
+html body div.ng-scope section .options:not(.search) select option:hover {
   background: #fec71c;
   color: #3c3c3c;
 }
@@ -465,15 +475,15 @@ html body div.ng-scope section.feed article .snippet {
 }
 /* line 1, ../sass/_org.scss */
 html body div.ng-scope section a:not(.article) {
-  height: 8rem;
-  width: 8rem;
+  height: 13rem;
+  width: 13rem;
   display: inline-block;
   background: #888888;
   border: 5px solid #fec71c;
   vertical-align: top;
   text-align: center;
   padding: 1rem;
-  margin: 1rem;
+  margin: .5rem;
   box-sizing: border-box;
 }
 /* line 13, ../sass/_org.scss */
@@ -492,6 +502,6 @@ html body div.ng-scope section a:not(.article) .helper {
 }
 /* line 27, ../sass/_org.scss */
 html body div.ng-scope section a:not(.article) img {
-  width: 4rem;
+  max-width: 10rem;
   vertical-align: middle;
 }

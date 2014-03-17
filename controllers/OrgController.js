@@ -1,9 +1,10 @@
 var app = angular.module('topnews');
 
-app.controller('OrgController', function ($scope, OrgFactory, ArticleFactory) {
+app.controller('OrgController', function ($scope, $location, OrgFactory, ArticleFactory) {
     $scope.orgs = [];
     $scope.articles = [];
     $scope.sortBy = 'avgRank';
+    $scope.location = $location;
 
     $scope.loadOrgs = function () {
         OrgFactory.read(function (data) {
@@ -32,7 +33,12 @@ app.controller('OrgController', function ($scope, OrgFactory, ArticleFactory) {
 
     $scope.setCurrentArticle = function (article) {
         ArticleFactory.setCurrentArticle(article);
-        window.location = '/#/' + article.org_id + '/article/show';
+        window.location = '/#!/article';
+    };
+
+    $scope.setCurrentOrg = function (org) {
+        OrgFactory.setCurrentOrg(org);
+        window.location = '#!/org';
     };
 
     $scope.loadOrgs();

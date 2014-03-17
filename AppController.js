@@ -1,16 +1,19 @@
 var app = angular.module('topnews', ['ngRoute']);
 
-app.config(function ($routeProvider) {
+app.config(function ($routeProvider, $locationProvider) {
+    $locationProvider.
+        hashPrefix('!');
+
     $routeProvider.
         when('/', {
             templateUrl: '/views/orgs.html',
             controller: 'OrgController'
         }).
-        when('/:org_id/:org_name', {
+        when('/org', {
             templateUrl: '/views/feeds.html',
             controller: 'FeedsController'
         }).
-        when('/:org_id/article/show', {
+        when('/article', {
             templateUrl: '/views/article.html',
             controller: 'ArticleController'
         });

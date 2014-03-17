@@ -6,7 +6,11 @@
         </span>
     </header>
     <section id="orgs" class="toggle">
-        <a ng-repeat="org in orgs" href="/#/{{org.org_id}}/{{org.org_name}}">
+        <span class="options search">
+            <label for="find">Search:</label>
+            <input type="search" id="find" ng-model="find"/>
+        </span>
+        <a itemscope itemtype="http://schema.org/Organization" ng-repeat="org in orgs | filter:find" ng-click="setCurrentOrg(org)" title="{{org.org_name}}">
             <span class="helper"></span>
             <img class ="org" ng-src="logos/{{org.org_id}}.png" alt="{{org.org_name}}">
         </a>
@@ -23,13 +27,13 @@
                 <option value="popularity">Popularity</option>
             </select>
         </span>
-        <a class="article" ng-click="setCurrentArticle(article)" ng-repeat="article in articles | orderBy : sortBy : true">
+        <a itemscope itemtype="http://schema.org/Article" class="article" ng-click="setCurrentArticle(article)" ng-repeat="article in articles | orderBy : sortBy : true">
             <article>
-                <h2>{{article.title}}</h2>
-                <div class="date">{{article.publishedDate | date:'medium'}}</div>
+                <h2 itemprop="name">{{article.title}}</h2>
+                <div itemprop="datePublished" class="date">{{article.publishedDate | date:'medium'}}</div>
 
-                <img ng-if="article.mediaGroups.length > 0" ng-src="{{article.mediaGroups[0].contents[0].url}}"/>
-                <span class="snippet">{{article.contentSnippet}}</span>
+                <img itemprop="image" ng-if="article.mediaGroups.length > 0" ng-src="{{article.mediaGroups[0].contents[0].url}}"/>
+                <span itemprop="description" class="snippet">{{article.contentSnippet}}</span>
             </article>
         </a>
     </section>

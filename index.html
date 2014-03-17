@@ -1,19 +1,49 @@
 <!DOCTYPE html>
 <html ng-app="topnews">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8"/>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
 
-    <title>News Grade</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    <meta name="description" content="The site where you score your news and see how news ranks among multiple media outlets" />
+    <meta name="keywords" content="news, media, grade, rate, rank, news media, news grade, news rate, news rank, media rank,
+        media rate, media grade, news media grade, news media rank, news media rate, credit, news credit, news media credit, media credit
+        credibility, news credibility, media credibility, news media credibility, credible news, credible media, credible news media
+        accountable news, accountable media, accountable news media"/>
+    <meta name="googlebot" content="index"/>
+    <meta name="googlebot-news" content="The site where you score your news and see how news ranks among multiple media outlets"/>
+    <meta property="og:title" content="newsgrade"/>
+    <meta property="og:type" content="Website"/>
+    <meta property="og:url" content="news.kerrywpowell.com"/>
+    <meta property="og:image" content="http://news.kerrywpowell.com/logos/newsrank.png"/>
+    <meta property="og:description" content="The site where you score your news and see how news ranks among multiple media outlets"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+
+    <title>News Grade - The site where you score your news and see how news ranks among multiple media outlets</title>
+    <link rel="canonical" href="news.kerrywpowell.com" />
     <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/stylesheets/app.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js"></script>
     <script src="http://code.angularjs.org/1.2.12/angular-route.min.js"></script>
 
     <script src="build/news.min.js"></script>
+
+    <script>
+        if (
+            navigator.appVersion.indexOf("MSIE 9") != -1 ||
+            navigator.appVersion.indexOf("MSIE 8") != -1 ||
+            navigator.appVersion.indexOf("MSIE 7") != -1||
+            navigator.appVersion.indexOf("MSIE 6") != -1||
+            navigator.appVersion.indexOf("MSIE 5") != -1
+        ) {
+            alert('Your browser is not supported, please update your browser');
+            window.location = 'http://chrome.google.com';
+        }
+    </script>
 
     <!--<script src="/AppController.js"></script>
     <script src="/controllers/OrgController.js"></script>
@@ -23,6 +53,8 @@
     <script src="/factories/OrgFactory.js"></script>
     <script src="/factories/FeedsFactory.js"></script>
     <script src="/factories/ArticleFactory.js"></script>-->
+
+    <base href="/">
 </head>
 <body>
 

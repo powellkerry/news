@@ -1,16 +1,16 @@
 <div class="page-container">
-    <header class="sub"><h1>{{org_name}} Feeds</h1></header>
+    <header class="sub"><h1>{{org.org_name}} Feeds</h1></header>
     <section ng-repeat="feed in feeds" class="feed">
         <header class="expandable collapsed" ng-click="loadRSS(feed, $event)">
             <h1>{{feed.feed_name}}</h1>
         </header>
-        <a class="article" ng-click="setCurrentArticle(article)" ng-repeat="article in feed.articles">
+        <a itemscope itemtype="http://schema.org/Article" class="article" ng-click="setCurrentArticle(article)" ng-repeat="article in feed.articles">
             <article>
-                <h2>{{article.title}}</h2>
-                <div class="date">{{article.publishedDate | date:'medium'}}</div>
+                <h2 itemprop="name">{{article.title}}</h2>
+                <div itemprop="datePublished" class="date">{{article.publishedDate | date:'medium'}}</div>
 
-                <img ng-if="article.mediaGroups.length > 0" ng-src="{{article.mediaGroups[0].contents[0].url}}"/>
-                <span class="snippet">{{article.contentSnippet}}</span>
+                <img itemprop="image" ng-if="article.mediaGroups.length > 0" ng-src="{{article.mediaGroups[0].contents[0].url}}"/>
+                <span itemprop="description" class="snippet">{{article.contentSnippet}}</span>
             </article>
         </a>
     </section>

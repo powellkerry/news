@@ -1,8 +1,10 @@
 var app = angular.module('topnews');
 
-app.controller('FeedsController', function ($scope, $routeParams, FeedsFactory, ArticleFactory) {
-    $scope.org_id = $routeParams.org_id;
-    $scope.org_name = $routeParams.org_name;
+app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, FeedsFactory, ArticleFactory) {
+    $scope.org = OrgFactory.getCurrentOrg();
+    if (!$scope.org) {
+        window.history.back();
+    }
     $scope.expandedFeed = null;
     $scope.selectedIndex = null;
     $scope.isReturn = false;
@@ -69,13 +71,13 @@ app.controller('FeedsController', function ($scope, $routeParams, FeedsFactory, 
 
     $scope.setCurrentArticle = function (article) {
         ArticleFactory.setCurrentArticle(article);
-        $scope.redirect('/#/' + $scope.org_id + '/article/show');
+        $scope.redirect('#!/article');
     };
 
     $scope.redirect = function (location) {
         window.location = location;
     };
 
-    $scope.loadFeeds($scope.org_id);
+    $scope.loadFeeds($scope.org.org_id);
 
 });

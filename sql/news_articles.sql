@@ -1,6 +1,7 @@
 CREATE TABLE news_articles (
   article_id serial primary key,
   org_id bigint unsigned,
+  feed_id bigint unsigned,
   title text,
   publishedDate datetime,
   mediaGroups text,

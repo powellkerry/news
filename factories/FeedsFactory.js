@@ -1,13 +1,12 @@
 var app = angular.module('topnews');
 
 app.factory('FeedsFactory', function ($http) {
-    var selectedFeed = null;
     return {
-        setSelectedFeed: function (feed) {
-            selectedFeed = feed;
+        setCurrentFeed: function (feed) {
+            window.localStorage.setItem('currentFeed', JSON.stringify(feed));
         },
-        getSelectedFeed: function () {
-            return selectedFeed;
+        getCurrentFeed: function () {
+            return JSON.parse(window.localStorage.getItem('currentFeed'));
         },
         read: function (org_id, callback) {
             $http.post('../server/request.php?action=readFeeds', {org_id: org_id}).success(callback);

@@ -12,7 +12,7 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
     $scope.loadFeeds = function (org_id) {
         FeedsFactory.read(org_id, function (data) {
             $scope.feeds = data;
-            var selectedFeed = FeedsFactory.getSelectedFeed();
+            var selectedFeed = FeedsFactory.getCurrentFeed();
             if (selectedFeed) {
 
                 angular.forEach(data, function (feed, index) {
@@ -44,7 +44,7 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
 
             $target.removeClass('collapsed');
             $target.addClass('expanded');
-            FeedsFactory.setSelectedFeed(feed);
+            FeedsFactory.setCurrentFeed(feed);
             feed.articles = FeedsFactory.loadFeeds(feed.feed_url, function (data) {
                 feed.articles = data;
                 angular.forEach(feed.articles, function (article) {
@@ -69,9 +69,15 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
         }
     };
 
-    $scope.setCurrentArticle = function (article) {
-        ArticleFactory.setCurrentArticle(article);
-        $scope.redirect('#!/article');
+    $scope.setCurrentArticle = function (article, feed_id) {
+        if (!article.mediaGroups) {
+            article.mediaGroups = "";
+        }
+        ArticleFactory.submitArticle(article, $scope.org.org_id, feed_id, function (data) {
+            article.article_id = data[0].article_id;
+            ArticleFactory.setCurrentArticle(article);
+            $scope.redirect('#!/article');
+        });
     };
 
     $scope.redirect = function (location) {

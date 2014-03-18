@@ -8,7 +8,16 @@ class db {
     private $db = 'news';
 
     public function connect() {
-        $connection = mysqli_connect($this->url, $this->user, $this->password, $this->db, $this->port);
+        $connection = new PDO(
+            'mysql:dbname='.$this->db.';host='.$this->url.':'.$this->port.';charset=utf8',
+            $this->user, $this->password
+        );
+
+        $connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+        $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+       // $connection = mysqli_connect($this->url, $this->user, $this->password, $this->db, $this->port);
 
         if (mysqli_connect_errno()) {
             return false;
@@ -17,19 +26,15 @@ class db {
         }
     }
 
-    public function sendResults($results, $terminateConnection) {
-        if(!is_string($results)) {
+    public function sendResults($stmt) {
+        if(!is_string($stmt)) {
             $myArray = array();
-            while($row = $results->fetch_object()) {
+            foreach ($stmt as $row) {
                 array_push($myArray, $row);
             }
             echo json_encode($myArray);
         } else {
-            echo $results;
-        }
-
-        if ($terminateConnection != false) {
-            mysqli_close($terminateConnection);
+            echo $stmt;
         }
     }
 }

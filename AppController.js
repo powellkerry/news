@@ -16,6 +16,10 @@ app.config(function ($routeProvider, $locationProvider) {
         when('/article', {
             templateUrl: '/views/article.html',
             controller: 'ArticleController'
+        }).
+        when('/article/:article_id', {
+            templateUrl: '/views/article.html',
+            controller: 'ArticleController'
         });
 });
 

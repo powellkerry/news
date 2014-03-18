@@ -3,15 +3,16 @@ a:not(.article) {
   width: 13rem;
   display: inline-block;
   background: $gray;
-  border: 5px solid $yellow;
+  border: 5px solid $black;
   vertical-align: top;
   text-align: center;
   padding: 1rem;
   margin: .5rem;
   box-sizing: border-box;
+  cursor: pointer;
 
   &:hover {
-    border: 5px solid $black;
+    border: 5px solid $yellow;
   }
 
   &:active {

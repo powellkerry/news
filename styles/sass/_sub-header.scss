@@ -4,15 +4,22 @@ header.sub {
   width: 80%;
   margin: 0px auto;
   position: relative;
+  margin-top: .5rem;
+
+  h1 {
+    margin: 0 1rem;
+    font-size: 2.5rem;
+  }
 
   &.rank {
     position: absolute;
     background: none;
     border-bottom: none;
+    margin-top: 0;
 
     @media screen and (min-width: 500px) {
-      top: .5rem;
-      right: 0rem;
+      top: 1.5rem;
+      right: 1rem;
       width:9rem;
       text-align: right;
     }

@@ -24,8 +24,6 @@ app.config(function ($routeProvider, $locationProvider) {
 });
 
 app.controller('AppController', function ($scope) {
-    $('.view-container').height($(window).height() - $('.site-header').height());
-
     $scope.toggleSocial = function($event) {
         var target = $event.currentTarget;
         if ($(target).hasClass('collapsed')) {
@@ -35,7 +33,7 @@ app.controller('AppController', function ($scope) {
             $(target).removeClass('expanded');
             $(target).addClass('collapsed');
         }
-    }
+    };
 
 });
 

@@ -4,25 +4,25 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-    <meta name="description" content="The site where you score your news and see how news ranks among multiple media outlets" />
+    <meta name="description" content="Where you rank your news and see how news ranks among multiple media outlets" />
     <meta name="keywords" content="news, media, grade, rate, rank, news media, news grade, news rate, news rank, media rank,
         media rate, media grade, news media grade, news media rank, news media rate, credit, news credit, news media credit, media credit
         credibility, news credibility, media credibility, news media credibility, credible news, credible media, credible news media
         accountable news, accountable media, accountable news media"/>
     <meta name="googlebot" content="index"/>
-    <meta name="googlebot-news" content="The site where you score your news and see how news ranks among multiple media outlets"/>
-    <meta property="og:title" content="newsgrade"/>
+    <meta name="googlebot-news" content="Where you rank your news and see how news ranks among multiple media outlets"/>
+    <meta property="og:title" content="newzrank"/>
     <meta property="og:type" content="Website"/>
-    <meta property="og:url" content="news.kerrywpowell.com"/>
+    <meta property="og:url" content="http://news.kerrywpowell.com"/>
     <meta property="og:image" content="http://news.kerrywpowell.com/logos/newsrank.png"/>
-    <meta property="og:description" content="The site where you score your news and see how news ranks among multiple media outlets"/>
+    <meta property="og:description" content="Where you score your news and see how news ranks among multiple media outlets"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="utf-8"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="mobile-web-app-capable" content="yes"/>
 
-    <title>News Grade - The site where you score your news and see how news ranks among multiple media outlets</title>
+    <title>newzrank - Where you score your news and see how news ranks among multiple media outlets</title>
     <link rel="canonical" href="news.kerrywpowell.com" />
     <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/stylesheets/app.css">
@@ -31,7 +31,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js"></script>
     <script src="http://code.angularjs.org/1.2.12/angular-route.min.js"></script>
 
-   <!-- <script src="build/news.min.js"></script>-->
+    <script src="build/news.min.js"></script>
 
     <script>
         if (
@@ -46,7 +46,7 @@
         }
     </script>
 
-    <script src="/AppController.js"></script>
+    <!--<script src="/AppController.js"></script>
     <script src="/controllers/OrgController.js"></script>
     <script src="/controllers/FeedsController.js"></script>
     <script src="/controllers/ArticleController.js"></script>
@@ -55,13 +55,15 @@
     <script src="/factories/FeedsFactory.js"></script>
     <script src="/factories/ArticleFactory.js"></script>
 
+    <script src="social.js" defer></script>-->
+
     <base href="/">
 </head>
 <body>
 
 <header class="site-header" ng-controller="AppController">
     <div class="container">
-        <a href="/#/">
+        <a href="/#!/">
             <img src="logos/newsrank.png">
             <h1><span class="yellow">newz</span><span class="gray">rank</span></h1>
         </a>
@@ -77,7 +79,7 @@
             </div>
 
             <div class="network twitter">
-                <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://news.kerrywpowell.com">Tweet</a>
             </div>
         </div>
 
@@ -87,25 +89,8 @@
 <div ng-view class="view-container"></div>
 
 
-<script type="text/javascript">
-    (function() {
-        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-        po.src = 'https://apis.google.com/js/platform.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-    })();
-</script>
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
 
 </body>
 </html>

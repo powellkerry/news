@@ -1,8 +1,8 @@
 var app = angular.module('topnews');
 
 app.controller('ArticleController', function ($scope, $routeParams, $sce, OrgFactory, ArticleFactory) {
-    $('.view-container').css('max-height', ($(window).height() - $('.site-header').height() - 34) + 'px');
-    $('.view-container').css('height', ($(window).height() - $('.site-header').height() - 34) + 'px');
+    $('.view-container').css('max-height', ($(window).height() - $('.site-header').height()) + 'px');
+    $('.view-container').css('height', ($(window).height() - $('.site-header').height()) + 'px');
 
     $scope.renderPage = function() {
         $scope.org_id = OrgFactory.getCurrentOrg().org_id;
@@ -17,7 +17,7 @@ app.controller('ArticleController', function ($scope, $routeParams, $sce, OrgFac
                 quality: 5
             };
         }
-    }
+    };
 
     if ($routeParams.article_id) {
         ArticleFactory.loadArticle($routeParams.article_id, function(data) {

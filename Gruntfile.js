@@ -10,7 +10,7 @@ module.exports = function (grunt) {
             },
             my_target: {
                 files: {
-                    'build/<%= pkg.name %>.min.js': ['AppController.js', 'controllers/*.js', 'factories/*.js']
+                    'build/<%= pkg.name %>.min.js': ['AppController.js', 'controllers/*.js', 'factories/*.js', 'social.js']
                 }
             }
         },

@@ -4,7 +4,7 @@
         <header class="expandable collapsed" ng-click="loadRSS(feed, $event)">
             <h1>{{feed.feed_name}}</h1>
         </header>
-        <a itemscope itemtype="http://schema.org/Article" class="article" ng-click="setCurrentArticle(article, feed.feed_id)" ng-repeat="article in feed.articles">
+        <a itemscope itemtype="http://schema.org/Article" class="article" ng-click="setCurrentArticle(article, feed)" ng-repeat="article in feed.articles">
             <article>
                 <h2 itemprop="name">{{article.title}}</h2>
                 <div itemprop="datePublished" class="date">{{article.publishedDate | date:'medium'}}</div>

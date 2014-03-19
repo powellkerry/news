@@ -3,66 +3,40 @@
   height: 1.8rem;
   border-top: 1px solid $yellow;
   border-bottom: 1px solid $black;
+  text-align: right;
 
   .networks {
-    color: $yellow;
-    cursor: pointer;
-    width: 30rem;
+    padding-right: .5rem;
 
-    &:hover {
-      color: $white;
-    }
+    a {
+      cursor: pointer;
 
-    &.collapsed {
-      -webkit-transition:all cubic-bezier(0,0,1,1) .1s;
-      transition:all cubic-bezier(0,0,1,1) .1s;
-      position: relative;
-      left: -21rem;
-
-      &:after {
-        content: 'Share \2799';
-        text-transform: uppercase;
-        font-size: 1.5rem;
-      }
-    }
-
-    &.expanded {
-      -webkit-transition:all cubic-bezier(0,0,1,1) .1s;
-      transition:all cubic-bezier(0,0,1,1) .1s;
-      position: relative;
-      left: 1rem;
-
-      &:before {
-        content: '\2799';
+      .network {
         display: inline-block;
-        transform: rotate(180deg);
-        -webkit-transform: rotate(180deg);
-        -moz-transform: rotate(180deg);
-        font-weight: bold;
-        text-transform: uppercase;
-        font-size: 1.5rem;
-        vertical-align: middle;
-      }
+        margin: 0.2rem 0;
+        height: 2rem;
+        width: 1.7rem;
+        background: url('/styles/resources/social.png') no-repeat;
 
+        &.google {
+          background-position: 2px -63px;
+          &:hover {
+            background-position: -25px -63px;
+          }
+        }
+        &.facebook {
+          background-position: 0 -1px;
+          &:hover {
+            background-position: -25px -1px;
+          }
+        }
+        &.twitter {
+          background-position: 0 -30px;
+          &:hover {
+            background-position: -25px -30px;
+          }
+        }
+      }
     }
-
-    .network {
-      display: inline-block;
-      margin: 0.2rem .5rem;
-
-      &.google {
-        max-width: 4rem;
-      }
-
-      div, iframe {
-        vertical-align: middle !important;
-      }
-    }
-  }
-
-
-  .tweet_button {
-    background: none;
-    border: none;
   }
 }

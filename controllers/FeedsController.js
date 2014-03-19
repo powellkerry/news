@@ -69,11 +69,12 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
         }
     };
 
-    $scope.setCurrentArticle = function (article, feed_id) {
+    $scope.setCurrentArticle = function (article, feed) {
         if (!article.mediaGroups) {
             article.mediaGroups = "";
         }
-        ArticleFactory.submitArticle(article, $scope.org.org_id, feed_id, function (data) {
+        article.category_id = feed.category_id;
+        ArticleFactory.submitArticle(article, $scope.org.org_id, feed.feed_id, function (data) {
             article.article_id = data[0].article_id;
             ArticleFactory.setCurrentArticle(article);
             $scope.redirect('#!/article/'+data[0].article_id);

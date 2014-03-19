@@ -24,17 +24,9 @@ app.config(function ($routeProvider, $locationProvider) {
 });
 
 app.controller('AppController', function ($scope) {
-    $scope.toggleSocial = function($event) {
-        var target = $event.currentTarget;
-        if ($(target).hasClass('collapsed')) {
-            $(target).addClass('expanded');
-            $(target).removeClass('collapsed');
-        } else {
-            $(target).removeClass('expanded');
-            $(target).addClass('collapsed');
-        }
+    $scope.openSocial = function(url) {
+        window.open(url, '_blank', 'modal=yes');
     };
-
 });
 
 

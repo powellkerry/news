@@ -60,66 +60,47 @@ html body .social {
   height: 1.8rem;
   border-top: 1px solid #fec71c;
   border-bottom: 1px solid #3c3c3c;
+  text-align: right;
 }
-/* line 7, ../sass/_social.scss */
+/* line 8, ../sass/_social.scss */
 html body .social .networks {
-  color: #fec71c;
+  padding-right: .5rem;
+}
+/* line 11, ../sass/_social.scss */
+html body .social .networks a {
   cursor: pointer;
-  width: 30rem;
 }
-/* line 12, ../sass/_social.scss */
-html body .social .networks:hover {
-  color: white;
+/* line 14, ../sass/_social.scss */
+html body .social .networks a .network {
+  display: inline-block;
+  margin: 0.2rem 0;
+  height: 2rem;
+  width: 1.7rem;
+  background: url("/styles/resources/social.png") no-repeat;
 }
-/* line 16, ../sass/_social.scss */
-html body .social .networks.collapsed {
-  -webkit-transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
-  transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
-  position: relative;
-  left: -21rem;
+/* line 21, ../sass/_social.scss */
+html body .social .networks a .network.google {
+  background-position: 2px -63px;
 }
-/* line 22, ../sass/_social.scss */
-html body .social .networks.collapsed:after {
-  content: 'Share \2799';
-  text-transform: uppercase;
-  font-size: 1.5rem;
+/* line 23, ../sass/_social.scss */
+html body .social .networks a .network.google:hover {
+  background-position: -25px -63px;
+}
+/* line 27, ../sass/_social.scss */
+html body .social .networks a .network.facebook {
+  background-position: 0 -1px;
 }
 /* line 29, ../sass/_social.scss */
-html body .social .networks.expanded {
-  -webkit-transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
-  transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
-  position: relative;
-  left: 1rem;
+html body .social .networks a .network.facebook:hover {
+  background-position: -25px -1px;
+}
+/* line 33, ../sass/_social.scss */
+html body .social .networks a .network.twitter {
+  background-position: 0 -30px;
 }
 /* line 35, ../sass/_social.scss */
-html body .social .networks.expanded:before {
-  content: '\2799';
-  display: inline-block;
-  transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  vertical-align: middle;
-}
-/* line 49, ../sass/_social.scss */
-html body .social .networks .network {
-  display: inline-block;
-  margin: 0.2rem .5rem;
-}
-/* line 53, ../sass/_social.scss */
-html body .social .networks .network.google {
-  max-width: 4rem;
-}
-/* line 57, ../sass/_social.scss */
-html body .social .networks .network div, html body .social .networks .network iframe {
-  vertical-align: middle !important;
-}
-/* line 64, ../sass/_social.scss */
-html body .social .tweet_button {
-  background: none;
-  border: none;
+html body .social .networks a .network.twitter:hover {
+  background-position: -25px -30px;
 }
 /* line 31, ../sass/app.scss */
 html body div.ng-scope .page-container {
@@ -137,10 +118,10 @@ html body div.ng-scope .frame-container {
 html body div.ng-scope header.sub {
   background: #fec71c;
   color: #3c3c3c;
-  width: 80%;
+  width: 100%;
+  max-width: 40rem;
   margin: 0px auto;
   position: relative;
-  margin-top: .5rem;
 }
 /* line 9, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub h1 {
@@ -157,7 +138,7 @@ html body div.ng-scope header.sub.rank {
 @media screen and (min-width: 500px) {
   /* line 14, ../sass/_sub-header.scss */
   html body div.ng-scope header.sub.rank {
-    top: 1.5rem;
+    top: 0rem;
     right: 1rem;
     width: 9rem;
     text-align: right;
@@ -281,7 +262,7 @@ html body div.ng-scope header.sub.rank form.dropdown {
     transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
     width: 10rem;
     top: auto;
-    right: 1rem;
+    right: 0rem;
     z-index: auto;
     height: auto;
   }
@@ -335,10 +316,15 @@ html body div.ng-scope header.sub.toolbar {
   box-sizing: border-box;
 }
 /* line 187, ../sass/_sub-header.scss */
+html body div.ng-scope header.sub.toolbar:before {
+  top: 2.9rem;
+  left: -.5rem;
+}
+/* line 192, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.toolbar h2 {
   color: #3c3c3c;
 }
-/* line 191, ../sass/_sub-header.scss */
+/* line 196, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.toolbar span.toggle button {
   border: none;
   outline: none;
@@ -350,9 +336,43 @@ html body div.ng-scope header.sub.toolbar span.toggle button {
   text-transform: uppercase;
   cursor: pointer;
 }
-/* line 202, ../sass/_sub-header.scss */
+/* line 207, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.toolbar span.toggle button.selected {
   background: #888888;
+}
+/* line 214, ../sass/_sub-header.scss */
+html body div.ng-scope header.sub.category {
+  margin: 0 0 0 2rem;
+  width: initial;
+  background: #fec71c;
+  color: #3c3c3c;
+  cursor: inherit;
+  box-sizing: border-box;
+}
+/* line 222, ../sass/_sub-header.scss */
+html body div.ng-scope header.sub.category article {
+  margin: 0 0 0 4rem;
+  border-bottom: 1px solid #fec71c;
+}
+/* line 226, ../sass/_sub-header.scss */
+html body div.ng-scope header.sub.category:before {
+  top: 2.2rem;
+  left: -1rem;
+}
+/* line 233, ../sass/_sub-header.scss */
+html body div.ng-scope header.sub.options:before, html body div.ng-scope header.sub.category:before {
+  width: 0;
+  height: 0;
+  display: inline-block;
+  position: relative;
+  content: '';
+  border-bottom: 1.2rem solid transparent;
+  border-right: 2rem solid #888888;
+  border-left: .5rem solid transparent;
+  box-sizing: border-box;
+  z-index: -1;
+  -webkit-margin-before: .1rem;
+  float: left;
 }
 /* line 42, ../sass/app.scss */
 html body div.ng-scope iframe {
@@ -370,45 +390,50 @@ html body div.ng-scope section {
   margin: 0px auto;
   width: 80%;
   vertical-align: top;
-  margin-top: 1rem;
 }
-/* line 58, ../sass/app.scss */
+/* line 57, ../sass/app.scss */
+html body div.ng-scope section.rank {
+  width: 100%;
+  margin: 0;
+}
+/* line 62, ../sass/app.scss */
 html body div.ng-scope section#orgs {
   text-align: center;
   width: 100%;
 }
-/* line 62, ../sass/app.scss */
+/* line 66, ../sass/app.scss */
 html body div.ng-scope section.toggle {
   display: none;
 }
-/* line 65, ../sass/app.scss */
+/* line 69, ../sass/app.scss */
 html body div.ng-scope section.toggle:first-of-type {
   display: inherit;
 }
 /* line 1, ../sass/_options.scss */
 html body div.ng-scope section .options {
-  background: #888888;
+  background: #3c3c3c;
   color: #fec71c;
   padding: .7rem;
   width: 100%;
   display: inline-block;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
-/* line 9, ../sass/_options.scss */
+/* line 10, ../sass/_options.scss */
 html body div.ng-scope section .options label {
   font-weight: bold;
   font-size: 1.2rem;
 }
-/* line 14, ../sass/_options.scss */
+/* line 15, ../sass/_options.scss */
 html body div.ng-scope section .options.search {
   max-width: 40rem;
   text-align: left;
 }
-/* line 18, ../sass/_options.scss */
+/* line 19, ../sass/_options.scss */
 html body div.ng-scope section .options.search input[type=search] {
   width: 85%;
 }
-/* line 25, ../sass/_options.scss */
+/* line 26, ../sass/_options.scss */
 html body div.ng-scope section .options:not(.search):before {
   width: 0;
   height: 0;
@@ -418,15 +443,15 @@ html body div.ng-scope section .options:not(.search):before {
   content: '';
   left: -1.2rem;
   border-bottom: 1.2rem solid transparent;
-  border-right: 2rem solid #000;
+  border-right: 2rem solid #888888;
   border-left: .5rem solid transparent;
   box-sizing: border-box;
   z-index: -1;
   -webkit-margin-before: .1rem;
 }
-/* line 41, ../sass/_options.scss */
+/* line 42, ../sass/_options.scss */
 html body div.ng-scope section .options:not(.search) select {
-  background: #3c3c3c;
+  background: #888888;
   color: #fec71c;
   border: none;
   padding: .5rem;
@@ -434,7 +459,7 @@ html body div.ng-scope section .options:not(.search) select {
   width: 8rem;
   margin-left: 1rem;
 }
-/* line 51, ../sass/_options.scss */
+/* line 52, ../sass/_options.scss */
 html body div.ng-scope section .options:not(.search) select option:hover {
   background: #fec71c;
   color: #3c3c3c;
@@ -444,29 +469,55 @@ html body div.ng-scope section.feed header {
   padding: .5rem;
   background: #3c3c3c;
   color: #fec71c;
-  margin-bottom: 1rem;
   cursor: pointer;
-  border-bottom: none;
+  margin-left: 2rem;
+  border-top: 1px solid #fec71c;
 }
 /* line 11, ../sass/_feed.scss */
 html body div.ng-scope section.feed header:hover {
   background: #fec71c;
   color: #3c3c3c;
 }
-/* line 16, ../sass/_feed.scss */
+/* line 17, ../sass/_feed.scss */
+html body div.ng-scope section.feed header:first-child.expandable.expanded {
+  border-top: 1px solid #3c3c3c;
+}
+/* line 22, ../sass/_feed.scss */
 html body div.ng-scope section.feed header.expandable.expanded {
   background: #fec71c;
   color: #3c3c3c;
 }
-/* line 21, ../sass/_feed.scss */
-html body div.ng-scope section.feed header.expandable:before {
+/* line 26, ../sass/_feed.scss */
+html body div.ng-scope section.feed header.expandable.expanded:before {
+  width: 0;
+  height: 0;
+  display: inline-block;
+  position: relative;
+  top: 2.2rem;
+  left: -1rem;
+  content: '';
+  border-bottom: 1.2rem solid transparent;
+  border-right: 2rem solid #888888;
+  border-left: .5rem solid transparent;
+  box-sizing: border-box;
+  z-index: -1;
+  -webkit-margin-before: .1rem;
+  float: left;
+}
+/* line 42, ../sass/_feed.scss */
+html body div.ng-scope section.feed header.expandable.expanded h1 {
+  position: relative;
+  left: -2.5rem;
+}
+/* line 48, ../sass/_feed.scss */
+html body div.ng-scope section.feed header.expandable h1:before {
   content: '\2799';
   font-weight: bold;
   margin: 0 1rem;
   font-size: 1.5rem;
 }
-/* line 27, ../sass/_feed.scss */
-html body div.ng-scope section.feed header.expandable.expanded:before {
+/* line 54, ../sass/_feed.scss */
+html body div.ng-scope section.feed header.expandable.expanded h1:before {
   -webkit-transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
   transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
   content: '\2799';
@@ -475,8 +526,8 @@ html body div.ng-scope section.feed header.expandable.expanded:before {
   -moz-transform: rotate(90deg);
   display: inline-block;
 }
-/* line 36, ../sass/_feed.scss */
-html body div.ng-scope section.feed header.expandable.collapsed:before {
+/* line 63, ../sass/_feed.scss */
+html body div.ng-scope section.feed header.expandable.collapsed h1:before {
   content: '\2799';
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -488,7 +539,7 @@ html body div.ng-scope section.feed header.expandable.collapsed:before {
   transform: rotate(0deg);
   -moz-transform: rotate(0deg);
 }
-/* line 49, ../sass/_feed.scss */
+/* line 76, ../sass/_feed.scss */
 html body div.ng-scope section.feed header h1 {
   padding: 0;
   margin: 0;
@@ -496,43 +547,59 @@ html body div.ng-scope section.feed header h1 {
   border: none;
   display: inline-block;
 }
-/* line 58, ../sass/_feed.scss */
+/* line 85, ../sass/_feed.scss */
 html body div.ng-scope section.feed article {
   background: #3c3c3c;
   color: white;
-  margin: 0 0 1rem 2rem;
+  margin: 0 0 0 4rem;
   padding: 1rem;
   cursor: pointer;
+  border-bottom: 1px solid #fec71c;
+  position: relative;
 }
-/* line 65, ../sass/_feed.scss */
+/* line 94, ../sass/_feed.scss */
+html body div.ng-scope section.feed article .rank {
+  float: right;
+  font-size: 1.5rem;
+  background: #888888;
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  top: 0rem;
+  font-weight: bold;
+  border-left: 1px solid #3c3c3c;
+  border-bottom: 1px solid #3c3c3c;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+/* line 112, ../sass/_feed.scss */
 html body div.ng-scope section.feed article:hover {
-  background: #fec71c;
-  color: #3c3c3c;
+  background: #888888;
 }
-/* line 69, ../sass/_feed.scss */
-html body div.ng-scope section.feed article:hover h2 {
-  color: #3c3c3c;
-}
-/* line 74, ../sass/_feed.scss */
+/* line 116, ../sass/_feed.scss */
 html body div.ng-scope section.feed article h2 {
   font-size: 1.2rem;
   color: #fec71c;
+  max-width: 33rem;
 }
-/* line 78, ../sass/_feed.scss */
+/* line 121, ../sass/_feed.scss */
 html body div.ng-scope section.feed article .date {
   font-size: .9rem;
   margin-bottom: .5rem;
 }
-/* line 82, ../sass/_feed.scss */
+/* line 125, ../sass/_feed.scss */
 html body div.ng-scope section.feed article img {
   display: inline-block;
   max-width: 8rem;
   border: 2px solid #888888;
 }
-/* line 88, ../sass/_feed.scss */
+/* line 131, ../sass/_feed.scss */
 html body div.ng-scope section.feed article .snippet {
   display: inline-block;
-  max-width: 27rem;
+  max-width: 25rem;
   vertical-align: top;
   margin-left: .5rem;
 }
@@ -569,3 +636,5 @@ html body div.ng-scope section a:not(.article) img {
   max-width: 10rem;
   vertical-align: middle;
 }
+
+/*@ sourceMappingURL=app.css.map */

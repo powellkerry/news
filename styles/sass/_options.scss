@@ -1,10 +1,11 @@
 .options {
-  background: $gray;
+  background: $black;
   color: $yellow;
   padding: .7rem;
   width: 100%;
   display: inline-block;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
 
   label {
     font-weight: bold;
@@ -31,7 +32,7 @@
       content: '';
       left: -1.2rem;
       border-bottom: 1.2rem solid transparent;
-      border-right: 2rem solid #000;
+      border-right: 2rem solid $gray;
       border-left: .5rem solid transparent;
       box-sizing: border-box;
       z-index: -1;
@@ -39,7 +40,7 @@
     }
 
     select {
-      background: $black;
+      background: $gray;
       color: $yellow;
       border: none;
       padding: .5rem;

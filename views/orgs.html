@@ -27,14 +27,24 @@
                 <option value="popularity">Popularity</option>
             </select>
         </span>
-        <a itemscope itemtype="http://schema.org/Article" class="article" ng-click="setCurrentArticle(article)" ng-repeat="article in articles | orderBy : sortBy : true">
-            <article>
-                <h2 itemprop="name">{{article.title}}</h2>
-                <div itemprop="datePublished" class="date">{{article.publishedDate | date:'medium'}}</div>
+        <section class="rank" ng-repeat="category in categories">
+            <header class="sub category">
+                <h2>{{category}}</h2>
+            </header>
+            <a itemscope itemtype="http://schema.org/Article" class="article"
+               ng-click="setCurrentArticle(article)"
+               ng-repeat="article in articles | orderBy : sortBy : sortDirection()"
+               ng-if="article.category_name == category"
+            >
+                <article>
+                    <div class="rank">{{getRank(article)}}</div>
+                    <h2 itemprop="name">{{article.title}}</h2>
+                    <div itemprop="datePublished" class="date">{{article.publishedDate | date:'medium'}}</div>
 
-                <img itemprop="image" ng-if="article.mediaGroups.length > 0" ng-src="{{article.mediaGroups[0].contents[0].url}}"/>
-                <span itemprop="description" class="snippet">{{article.contentSnippet}}</span>
-            </article>
-        </a>
+                    <img itemprop="image" ng-if="article.mediaGroups.length > 0" ng-src="{{article.mediaGroups[0].contents[0].url}}"/>
+                    <span itemprop="description" class="snippet">{{article.contentSnippet}}</span>
+                </article>
+            </a>
+        </section>
     </section>
 </div>

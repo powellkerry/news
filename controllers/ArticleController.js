@@ -37,7 +37,7 @@ app.controller('ArticleController', function ($scope, $routeParams, $sce, OrgFac
         if (!$scope.article.mediaGroups) {
             $scope.article.mediaGroups = "";
         }
-        ArticleFactory.submitFeedback($scope.feedback, $scope.article, $scope.org_id, function () {
+        ArticleFactory.submitFeedback($scope.feedback, $scope.article.article_id, $scope.org_id, function () {
             window.location = '#!/org';
         });
     };

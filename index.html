@@ -53,9 +53,7 @@
 
     <script src="/factories/OrgFactory.js"></script>
     <script src="/factories/FeedsFactory.js"></script>
-    <script src="/factories/ArticleFactory.js"></script>
-
-    <script src="social.js" defer></script>-->
+    <script src="/factories/ArticleFactory.js"></script>-->
 
     <base href="/">
 </head>
@@ -69,18 +67,20 @@
         </a>
     </div>
     <section class="social">
-        <div class="networks collapsed" ng-click="toggleSocial($event)">
-            <div class="network google">
-                <div class="g-plusone" data-size="medium" data-href="https://news.kerrywpowell.com"></div>
-            </div>
+        <div class="networks" ng-click="toggleSocial($event)">
+            <a ng-click="openSocial('https://plus.google.com/share?url=http://news.kerrywpowell.com')">
+                <div class="network google"></div>
+            </a>
 
-            <div class="network facebook">
-                <div class="fb-like" data-href="http://news.kerrywpowell.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
-            </div>
+            <a ng-click="openSocial('https://www.facebook.com/sharer/sharer.php?u=http://news.kerrywpowell.com')">
+                <div class="network facebook"></div>
+            </a>
 
-            <div class="network twitter">
-                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://news.kerrywpowell.com">Tweet</a>
-            </div>
+            <a ng-click="openSocial('https://twitter.com/intent/tweet?url=http://news.kerrywpowell.com&text=rank%20your%20news%20at:')">
+                <div class="network twitter">
+                    <!--<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://news.kerrywpowell.com">Tweet</a>-->
+                </div>
+            </a>
         </div>
 
     </section>

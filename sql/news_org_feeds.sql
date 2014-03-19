@@ -1,10 +1,12 @@
 create table news_org_feeds (
   feed_id serial primary key,
   org_id bigint unsigned,
+  category_id bigint unsigned,
   feed_name text,
   feed_url text,
 
-  FOREIGN KEY (org_id) REFERENCES news_orgs(org_id)
+  FOREIGN KEY (org_id) REFERENCES news_orgs(org_id),
+  FOREIGN KEY (category_id) REFERENCES news_categories(category_id)
 );
 
 INSERT INTO news_org_feeds (org_id, feed_name, feed_url) VALUES (1, 'News', 'http://www.msn.com/rss/msnnews.aspx');

@@ -18,7 +18,7 @@ header.sub {
     margin-top: 0;
 
     @media screen and (min-width: 500px) {
-      top: 0rem;
+      top: 1rem;
       right: 1rem;
       width:9rem;
       text-align: right;
@@ -72,10 +72,10 @@ header.sub {
           content: 'Rate It';
         }
 
-        &:hover {
+/*        &:hover {
           background: $gray;
           color: $yellow;
-        }
+        }*/
 
         &.menu:after {
           content: '\2799';

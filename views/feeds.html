@@ -9,7 +9,7 @@
                 <h2 itemprop="name">{{article.title}}</h2>
                 <div itemprop="datePublished" class="date">{{article.publishedDate | date:'medium'}}</div>
 
-                <img itemprop="image" ng-if="article.mediaGroups.length > 0" ng-src="{{article.mediaGroups[0].contents[0].url}}"/>
+                <img itemprop="image" ng-if="article.mediaGroups.length > 0" ng-src="{{getThumb(article)}}"/>
                 <span itemprop="description" class="snippet">{{article.contentSnippet}}</span>
             </article>
         </a>

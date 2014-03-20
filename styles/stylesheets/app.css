@@ -52,7 +52,7 @@ html body header .container h1 .yellow {
 }
 /* line 27, ../sass/_header.scss */
 html body header .container h1 .gray {
-  color: #acacac;
+  color: #888888;
 }
 /* line 1, ../sass/_social.scss */
 html body .social {
@@ -81,26 +81,23 @@ html body .social .networks a .network {
 /* line 21, ../sass/_social.scss */
 html body .social .networks a .network.google {
   background-position: 2px -63px;
-}
-/* line 23, ../sass/_social.scss */
-html body .social .networks a .network.google:hover {
-  background-position: -25px -63px;
+  /*          &:hover {
+              background-position: -25px -63px;
+            }*/
 }
 /* line 27, ../sass/_social.scss */
 html body .social .networks a .network.facebook {
   background-position: 0 -1px;
-}
-/* line 29, ../sass/_social.scss */
-html body .social .networks a .network.facebook:hover {
-  background-position: -25px -1px;
+  /*          &:hover {
+              background-position: -25px -1px;
+            }*/
 }
 /* line 33, ../sass/_social.scss */
 html body .social .networks a .network.twitter {
   background-position: 0 -30px;
-}
-/* line 35, ../sass/_social.scss */
-html body .social .networks a .network.twitter:hover {
-  background-position: -25px -30px;
+  /*          &:hover {
+              background-position: -25px -30px;
+            }*/
 }
 /* line 31, ../sass/app.scss */
 html body div.ng-scope .page-container {
@@ -138,7 +135,7 @@ html body div.ng-scope header.sub.rank {
 @media screen and (min-width: 500px) {
   /* line 14, ../sass/_sub-header.scss */
   html body div.ng-scope header.sub.rank {
-    top: 0rem;
+    top: 1rem;
     right: 1rem;
     width: 9rem;
     text-align: right;
@@ -196,14 +193,16 @@ html body div.ng-scope header.sub.rank button.menu.expanded {
   }
 }
 @media screen and (min-width: 500px) {
+  /* line 36, ../sass/_sub-header.scss */
+  html body div.ng-scope header.sub.rank button {
+    /*        &:hover {
+              background: $gray;
+              color: $yellow;
+            }*/
+  }
   /* line 71, ../sass/_sub-header.scss */
   html body div.ng-scope header.sub.rank button:before {
     content: 'Rate It';
-  }
-  /* line 75, ../sass/_sub-header.scss */
-  html body div.ng-scope header.sub.rank button:hover {
-    background: #888888;
-    color: #fec71c;
   }
   /* line 80, ../sass/_sub-header.scss */
   html body div.ng-scope header.sub.rank button.menu:after {
@@ -439,7 +438,7 @@ html body div.ng-scope section .options:not(.search):before {
   height: 0;
   display: inline-block;
   position: relative;
-  top: 2.7rem;
+  top: 2.6rem;
   content: '';
   left: -1.2rem;
   border-bottom: 1.2rem solid transparent;
@@ -472,11 +471,10 @@ html body div.ng-scope section.feed header {
   cursor: pointer;
   margin-left: 2rem;
   border-top: 1px solid #fec71c;
-}
-/* line 11, ../sass/_feed.scss */
-html body div.ng-scope section.feed header:hover {
-  background: #fec71c;
-  color: #3c3c3c;
+  /*    &:hover {
+        background: $yellow;
+        color: $black;
+      }*/
 }
 /* line 17, ../sass/_feed.scss */
 html body div.ng-scope section.feed header:first-child.expandable.expanded {
@@ -556,6 +554,9 @@ html body div.ng-scope section.feed article {
   cursor: pointer;
   border-bottom: 1px solid #fec71c;
   position: relative;
+  /*    &:hover {
+        background: $gray;
+      }*/
 }
 /* line 94, ../sass/_feed.scss */
 html body div.ng-scope section.feed article .rank {
@@ -574,10 +575,6 @@ html body div.ng-scope section.feed article .rank {
   border-bottom: 1px solid #3c3c3c;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-}
-/* line 112, ../sass/_feed.scss */
-html body div.ng-scope section.feed article:hover {
-  background: #888888;
 }
 /* line 116, ../sass/_feed.scss */
 html body div.ng-scope section.feed article h2 {

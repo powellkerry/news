@@ -69,6 +69,25 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
         }
     };
 
+    $scope.getThumb = function(article) {
+        var mediaGroupContents =  article.mediaGroups[0].contents[0];
+        if (mediaGroupContents.thumbnails) {
+            return mediaGroupContents.thumbnails[0].url;
+        } else {
+            var url = '',
+                width = null;
+            angular.forEach(article.mediaGroups[0].contents, function(media) {
+                if (media.width) {
+                    if (!width || media.width < width) {
+                        width = media.width;
+                        url = media.url;
+                    }
+                }
+            });
+            return url;
+        }
+    };
+
     $scope.setCurrentArticle = function (article, feed) {
         if (!article.mediaGroups) {
             article.mediaGroups = "";

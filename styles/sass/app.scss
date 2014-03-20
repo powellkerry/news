@@ -29,7 +29,6 @@ html {
     @import "social";
     div.ng-scope {
       .page-container {
-        width: 50rem;
         max-width: 100%;
         margin: 0px auto;
       }
@@ -49,9 +48,8 @@ html {
         box-sizing: border-box;
         display: inline-block;
       }
-      section {
+      section, section section {
         margin: 0px auto;
-        width: 80%;
         vertical-align: top;
 
         &.rank {

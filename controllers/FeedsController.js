@@ -14,16 +14,26 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
             $scope.feeds = data;
             var selectedFeed = FeedsFactory.getCurrentFeed();
             if (selectedFeed) {
-
+                var found = false;
                 angular.forEach(data, function (feed, index) {
                     if (feed.feed_id === selectedFeed.feed_id) {
                         $scope.selectedIndex = index;
+                        found = true;
                         setTimeout(function () {
                             $($('header.collapsed')[$scope.selectedIndex]).trigger('click');
                         }, 500);
                         $scope.isReturn = true;
                     }
                 });
+                if (!found) {
+                    setTimeout(function () {
+                        $($('header.collapsed')[0]).trigger('click');
+                    }, 500);
+                }
+            } else {
+                setTimeout(function () {
+                    $($('header.collapsed')[0]).trigger('click');
+                }, 500);
             }
         });
     };
@@ -33,22 +43,33 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
         if ($target.hasClass('expanded')) {
             $target.removeClass('expanded');
             $target.addClass('collapsed');
+            $target.siblings().hide()
             $scope.expandedFeed = null;
             feed.articles = [];
         } else {
             if ($scope.expandedFeed !== null) {
                 $('header.expanded').addClass('collapsed');
+                $('header.expanded').siblings().hide();
                 $('header.expanded').removeClass('expanded');
                 $scope.expandedFeed.articles = [];
             }
 
             $target.removeClass('collapsed');
             $target.addClass('expanded');
+            $target.siblings().show()
             FeedsFactory.setCurrentFeed(feed);
             feed.articles = FeedsFactory.loadFeeds(feed.feed_url, function (data) {
                 feed.articles = data;
                 angular.forEach(feed.articles, function (article) {
                     article.publishedDate = new Date(article.publishedDate);
+                    article.fullTitle = article.title;
+                    if (article.title.length > 40) {
+                        article.title = article.title.substr(0,40)+'...';
+
+                    }
+                    if (article.contentSnippet.length > 90) {
+                        article.contentSnippet = article.contentSnippet.substr(0,90)+'...';
+                    }
                 });
                 $scope.expandedFeed = feed;
 

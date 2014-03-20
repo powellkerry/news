@@ -11,10 +11,6 @@ a:not(.article) {
   box-sizing: border-box;
   cursor: pointer;
 
-  &:hover {
-    border: 5px solid $yellow;
-  }
-
   &:active {
     background: $gray;
   }

@@ -32,7 +32,28 @@ app.controller('OrgController', function ($scope, $location, OrgFactory, Article
                 var match = article.publishedDate.match(/^(\d+)-(\d+)-(\d+) (\d+)\:(\d+)\:(\d+)$/);
                 article.publishedDate = new Date(match[1], match[2] - 1, match[3], match[4], match[5], match[6]);
             });
+            setTimeout(function() {
+                $($('header.collapsed')[0]).trigger('click');
+            }, 500);
         });
+    };
+
+    $scope.toggleCategory = function($event) {
+        $target = $($event.currentTarget);
+        if ($target.hasClass('expanded')) {
+            $target.removeClass('expanded');
+            $target.addClass('collapsed');
+            $target.siblings().hide();
+        } else {
+            if ($('header.expanded').length > 0) {
+                $('header.expanded').addClass('collapsed');
+                $('header.expanded').siblings().hide();
+                $('header.expanded').removeClass('expanded');
+            }
+            $target.removeClass('collapsed');
+            $target.addClass('expanded');
+            $target.siblings().show();
+        }
     };
 
     $scope.toggle = function ($event, section) {
@@ -44,7 +65,7 @@ app.controller('OrgController', function ($scope, $location, OrgFactory, Article
 
     $scope.setCurrentArticle = function (article) {
         ArticleFactory.setCurrentArticle(article);
-        window.location = '/#!/article';
+        window.location = '/#!/article/'+article.article_id;
     };
 
     $scope.setCurrentOrg = function (org) {

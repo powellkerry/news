@@ -6,7 +6,7 @@ app.controller('ArticleController', function ($scope, $routeParams, $sce, OrgFac
         $('.view-container').css('height', ($(window).height() - $('.site-header').height()) + 'px');
     }
 
-    $scope.renderPage = function() {
+    $scope.renderPage = function () {
         $scope.org_id = OrgFactory.getCurrentOrg().org_id;
         $scope.article = ArticleFactory.getCurrentArticle();
         if (!$scope.article || !$scope.article.link) {
@@ -22,9 +22,9 @@ app.controller('ArticleController', function ($scope, $routeParams, $sce, OrgFac
     };
 
     if ($routeParams.article_id) {
-        ArticleFactory.loadArticle($routeParams.article_id, function(data) {
+        ArticleFactory.loadArticle($routeParams.article_id, function (data) {
             ArticleFactory.setCurrentArticle(data[0]);
-            OrgFactory.loadOrg($routeParams.article_id, function(data) {
+            OrgFactory.loadOrg($routeParams.article_id, function (data) {
                 OrgFactory.setCurrentOrg(data[0]);
                 $scope.renderPage();
             });

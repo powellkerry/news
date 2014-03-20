@@ -24,7 +24,7 @@ app.config(function ($routeProvider, $locationProvider) {
 });
 
 app.controller('AppController', function ($scope) {
-    $scope.openSocial = function(url) {
+    $scope.openSocial = function (url) {
         window.open(url, '_blank', 'modal=yes');
     };
 });

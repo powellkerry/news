@@ -12,9 +12,9 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
     $scope.loadFeeds = function (org_id) {
         FeedsFactory.read(org_id, function (data) {
             $scope.feeds = data;
-            var selectedFeed = FeedsFactory.getCurrentFeed();
+            var selectedFeed = FeedsFactory.getCurrentFeed(),
+                found = false;
             if (selectedFeed) {
-                var found = false;
                 angular.forEach(data, function (feed, index) {
                     if (feed.feed_id === selectedFeed.feed_id) {
                         $scope.selectedIndex = index;
@@ -43,7 +43,7 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
         if ($target.hasClass('expanded')) {
             $target.removeClass('expanded');
             $target.addClass('collapsed');
-            $target.siblings().hide()
+            $target.siblings().hide();
             $scope.expandedFeed = null;
             feed.articles = [];
         } else {
@@ -56,7 +56,7 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
 
             $target.removeClass('collapsed');
             $target.addClass('expanded');
-            $target.siblings().show()
+            $target.siblings().show();
             FeedsFactory.setCurrentFeed(feed);
             feed.articles = FeedsFactory.loadFeeds(feed.feed_url, function (data) {
                 feed.articles = data;
@@ -64,11 +64,11 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
                     article.publishedDate = new Date(article.publishedDate);
                     article.fullTitle = article.title;
                     if (article.title.length > 40) {
-                        article.title = article.title.substr(0,40)+'...';
+                        article.title = article.title.substr(0, 40) + '...';
 
                     }
                     if (article.contentSnippet.length > 90) {
-                        article.contentSnippet = article.contentSnippet.substr(0,90)+'...';
+                        article.contentSnippet = article.contentSnippet.substr(0, 90) + '...';
                     }
                 });
                 $scope.expandedFeed = feed;
@@ -90,14 +90,14 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
         }
     };
 
-    $scope.getThumb = function(article) {
-        var mediaGroupContents =  article.mediaGroups[0].contents[0];
+    $scope.getThumb = function (article) {
+        var mediaGroupContents =  article.mediaGroups[0].contents[0],
+            url = '',
+            width = null;
         if (mediaGroupContents.thumbnails) {
-            return mediaGroupContents.thumbnails[0].url;
+            url = mediaGroupContents.thumbnails[0].url;
         } else {
-            var url = '',
-                width = null;
-            angular.forEach(article.mediaGroups[0].contents, function(media) {
+            angular.forEach(article.mediaGroups[0].contents, function (media) {
                 if (media.width) {
                     if (!width || media.width < width) {
                         width = media.width;
@@ -105,8 +105,8 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
                     }
                 }
             });
-            return url;
         }
+        return url;
     };
 
     $scope.setCurrentArticle = function (article, feed) {
@@ -117,7 +117,7 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
         ArticleFactory.submitArticle(article, $scope.org.org_id, feed.feed_id, function (data) {
             article.article_id = data[0].article_id;
             ArticleFactory.setCurrentArticle(article);
-            $scope.redirect('#!/article/'+data[0].article_id);
+            $scope.redirect('#!/article/' + data[0].article_id);
         });
     };
 

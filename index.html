@@ -42,7 +42,7 @@
     <script src="http://code.angularjs.org/1.2.12/angular-route.min.js"></script>
     <script src="http://code.angularjs.org/1.2.12/angular-touch.min.js"></script>
 
-    <!--<script src="build/news.min.js"></script>-->
+    <script src="build/news.min.js"></script>
 
     <script>
         if (
@@ -57,7 +57,7 @@
         }
     </script>
 
-    <script src="/AppController.js"></script>
+    <!--<script src="/AppController.js"></script>
     <script src="/controllers/OrgController.js"></script>
     <script src="/controllers/FeedsController.js"></script>
     <script src="/controllers/ArticleController.js"></script>
@@ -66,7 +66,7 @@
     <script src="/factories/FeedsFactory.js"></script>
     <script src="/factories/ArticleFactory.js"></script>
     <script src="/factories/MobileFactory.js"></script>
-    <script src="/factories/BreadcrumbFactory.js"></script>
+    <script src="/factories/BreadcrumbFactory.js"></script>-->
 
     <base href="/">
 </head>
@@ -86,15 +86,27 @@
             </span>
         </div>
         <div class="networks" ng-click="toggleSocial($event)">
-            <a ng-click="openSocial('https://plus.google.com/share?url=http://news.kerrywpowell.com')">
+            <a title="Google+" ng-if="isIos()" href="https://plus.google.com/share?url=http://news.kerrywpowell.com" target="_blank">
                 <div class="network google"></div>
             </a>
 
-            <a ng-click="openSocial('https://www.facebook.com/sharer/sharer.php?u=http://news.kerrywpowell.com')">
+            <a title="Google+" ng-if="!isIos()" ng-click="openSocial('https://plus.google.com/share?url=http://news.kerrywpowell.com&embed=true')">
+                <div class="network google"></div>
+            </a>
+
+            <a title="Facebook" ng-if="isIos()" href="https://www.facebook.com/sharer/sharer.php?u=http://news.kerrywpowell.com')" target="_blank">
                 <div class="network facebook"></div>
             </a>
 
-            <a ng-click="openSocial('https://twitter.com/intent/tweet?url=http://news.kerrywpowell.com&text=rank%20your%20news%20at:')">
+            <a title="Facebook" ng-if="!isIos()" ng-click="openSocial('https://www.facebook.com/sharer/sharer.php?u=http://news.kerrywpowell.com')">
+                <div class="network facebook"></div>
+            </a>
+
+            <a title="Twitter" ng-if="isIos()" href="https://twitter.com/intent/tweet?url=http://news.kerrywpowell.com&text=rank%20your%20news%20at:" target="_blank">
+                <div class="network twitter"></div>
+            </a>
+
+            <a title="Twitter" ng-if="!isIos()" ng-click="openSocial('https://twitter.com/intent/tweet?url=http://news.kerrywpowell.com&text=rank%20your%20news%20at:')">
                 <div class="network twitter"></div>
             </a>
         </div>
@@ -103,10 +115,6 @@
 </header>
 
 <div ng-view class="view-container"></div>
-
-
-
-<div id="fb-root"></div>
 
 </body>
 </html>

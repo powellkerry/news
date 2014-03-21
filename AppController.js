@@ -32,10 +32,9 @@ app.config(function ($routeProvider, $locationProvider) {
         });
 });
 
-app.controller('AppController', function ($scope, BreadcrumbFactory) {
+app.controller('AppController', function ($scope, BreadcrumbFactory, MobileFactory) {
     $scope.breadcrumbs = [];
     $scope.$on('$routeChangeSuccess', function (scope, route) {
-        console.log(route);
         BreadcrumbFactory.setUrl(window.location.hash);
         $scope.breadcrumbs = BreadcrumbFactory.getBreadCrumb();
 
@@ -43,6 +42,10 @@ app.controller('AppController', function ($scope, BreadcrumbFactory) {
 
     $scope.openSocial = function (url) {
         window.open(url, '_blank', 'modal=yes');
+    };
+
+    $scope.isIos = function() {
+        return MobileFactory.isIos();
     };
 
     $scope.navigate = function (direction) {

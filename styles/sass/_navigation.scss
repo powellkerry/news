@@ -8,16 +8,17 @@
     display: inline-block;
     vertical-align: middle;
     margin-left: 1rem;
+    padding-top: .3rem;
 
     .breadcrumb {
       a {
         color: $white;
-        font-size: 1.5rem;
+        font-size: 1rem;
       }
 
       &:not(:last-child):after {
-        content: '>';
-        font-size: 1.5rem;
+        content: '\2799';
+        font-size: 1rem;
         color: $white;
       }
     }

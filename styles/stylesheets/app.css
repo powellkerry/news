@@ -38,30 +38,31 @@ html body header .nav .breadcrumbs {
   display: inline-block;
   vertical-align: middle;
   margin-left: 1rem;
+  padding-top: .3rem;
 }
-/* line 13, ../sass/_navigation.scss */
+/* line 14, ../sass/_navigation.scss */
 html body header .nav .breadcrumbs .breadcrumb a {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
-/* line 18, ../sass/_navigation.scss */
+/* line 19, ../sass/_navigation.scss */
 html body header .nav .breadcrumbs .breadcrumb:not(:last-child):after {
-  content: '>';
-  font-size: 1.5rem;
+  content: '\2799';
+  font-size: 1rem;
   color: white;
 }
-/* line 26, ../sass/_navigation.scss */
+/* line 27, ../sass/_navigation.scss */
 html body header .nav .networks {
   padding-right: .5rem;
   float: right;
   display: inline-block;
   height: 1rem;
 }
-/* line 32, ../sass/_navigation.scss */
+/* line 33, ../sass/_navigation.scss */
 html body header .nav .networks a {
   cursor: pointer;
 }
-/* line 35, ../sass/_navigation.scss */
+/* line 36, ../sass/_navigation.scss */
 html body header .nav .networks a .network {
   display: inline-block;
   margin: 0.2rem 0;
@@ -69,15 +70,15 @@ html body header .nav .networks a .network {
   width: 1.7rem;
   background: url("/styles/resources/social.png") no-repeat;
 }
-/* line 42, ../sass/_navigation.scss */
+/* line 43, ../sass/_navigation.scss */
 html body header .nav .networks a .network.google {
   background-position: 2px -63px;
 }
-/* line 45, ../sass/_navigation.scss */
+/* line 46, ../sass/_navigation.scss */
 html body header .nav .networks a .network.facebook {
   background-position: 0 -1px;
 }
-/* line 48, ../sass/_navigation.scss */
+/* line 49, ../sass/_navigation.scss */
 html body header .nav .networks a .network.twitter {
   background-position: 0 -30px;
 }
@@ -109,13 +110,17 @@ html body header .container h1 .yellow {
 html body header .container h1 .gray {
   color: #888888;
 }
-/* line 30, ../sass/app.scss */
+/* line 1, ../sass/_social.scss */
+html body .social-container {
+  display: none;
+}
+/* line 31, ../sass/app.scss */
 html body div.ng-scope .page-container {
   width: 100%;
   max-width: 57rem;
   margin: 0px auto;
 }
-/* line 36, ../sass/app.scss */
+/* line 37, ../sass/app.scss */
 html body div.ng-scope iframe {
   width: 100%;
   height: 99%;
@@ -342,26 +347,26 @@ html body div.ng-scope header.sub.toolbar span.toggle button {
 html body div.ng-scope header.sub.toolbar span.toggle button.selected {
   background: #888888;
 }
-/* line 48, ../sass/app.scss */
+/* line 49, ../sass/app.scss */
 html body div.ng-scope section, html body div.ng-scope section section {
   margin: 0px auto;
   vertical-align: top;
 }
-/* line 52, ../sass/app.scss */
+/* line 53, ../sass/app.scss */
 html body div.ng-scope section.rank, html body div.ng-scope section section.rank {
   width: 100%;
   margin: 0;
 }
-/* line 57, ../sass/app.scss */
+/* line 58, ../sass/app.scss */
 html body div.ng-scope section#orgs, html body div.ng-scope section section#orgs {
   text-align: center;
   width: 100%;
 }
-/* line 61, ../sass/app.scss */
+/* line 62, ../sass/app.scss */
 html body div.ng-scope section.toggle, html body div.ng-scope section section.toggle {
   display: none;
 }
-/* line 64, ../sass/app.scss */
+/* line 65, ../sass/app.scss */
 html body div.ng-scope section.toggle:first-of-type, html body div.ng-scope section section.toggle:first-of-type {
   display: inherit;
 }

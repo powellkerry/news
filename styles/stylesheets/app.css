@@ -26,19 +26,74 @@ html body header {
   background: #3c3c3c;
   max-width: 100%;
 }
-/* line 5, ../sass/_header.scss */
+/* line 1, ../sass/_navigation.scss */
+html body header .nav {
+  background: #888888;
+  height: 1.8rem;
+  border-top: 1px solid #fec71c;
+  border-bottom: 1px solid #3c3c3c;
+}
+/* line 7, ../sass/_navigation.scss */
+html body header .nav .breadcrumbs {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 1rem;
+}
+/* line 13, ../sass/_navigation.scss */
+html body header .nav .breadcrumbs .breadcrumb a {
+  color: white;
+  font-size: 1.5rem;
+}
+/* line 18, ../sass/_navigation.scss */
+html body header .nav .breadcrumbs .breadcrumb:not(:last-child):after {
+  content: '>';
+  font-size: 1.5rem;
+  color: white;
+}
+/* line 26, ../sass/_navigation.scss */
+html body header .nav .networks {
+  padding-right: .5rem;
+  float: right;
+  display: inline-block;
+  height: 1rem;
+}
+/* line 32, ../sass/_navigation.scss */
+html body header .nav .networks a {
+  cursor: pointer;
+}
+/* line 35, ../sass/_navigation.scss */
+html body header .nav .networks a .network {
+  display: inline-block;
+  margin: 0.2rem 0;
+  height: 2rem;
+  width: 1.7rem;
+  background: url("/styles/resources/social.png") no-repeat;
+}
+/* line 42, ../sass/_navigation.scss */
+html body header .nav .networks a .network.google {
+  background-position: 2px -63px;
+}
+/* line 45, ../sass/_navigation.scss */
+html body header .nav .networks a .network.facebook {
+  background-position: 0 -1px;
+}
+/* line 48, ../sass/_navigation.scss */
+html body header .nav .networks a .network.twitter {
+  background-position: 0 -30px;
+}
+/* line 6, ../sass/_header.scss */
 html body header .container {
   width: 80%;
   margin: 0px auto;
   margin: 1rem 0 1rem 2rem;
   display: inline-block;
 }
-/* line 11, ../sass/_header.scss */
+/* line 12, ../sass/_header.scss */
 html body header .container img {
   display: inline-block;
   vertical-align: middle;
 }
-/* line 16, ../sass/_header.scss */
+/* line 17, ../sass/_header.scss */
 html body header .container h1 {
   font-weight: normal;
   display: inline-block;
@@ -46,61 +101,30 @@ html body header .container h1 {
   font-size: 2.5rem;
   margin-left: 1rem;
 }
-/* line 24, ../sass/_header.scss */
+/* line 25, ../sass/_header.scss */
 html body header .container h1 .yellow {
   color: #fec71c;
 }
-/* line 27, ../sass/_header.scss */
+/* line 28, ../sass/_header.scss */
 html body header .container h1 .gray {
   color: #888888;
 }
-/* line 1, ../sass/_social.scss */
-html body .social {
-  background: #888888;
-  height: 1.8rem;
-  border-top: 1px solid #fec71c;
-  border-bottom: 1px solid #3c3c3c;
-  text-align: right;
-}
-/* line 8, ../sass/_social.scss */
-html body .social .networks {
-  padding-right: .5rem;
-}
-/* line 11, ../sass/_social.scss */
-html body .social .networks a {
-  cursor: pointer;
-}
-/* line 14, ../sass/_social.scss */
-html body .social .networks a .network {
-  display: inline-block;
-  margin: 0.2rem 0;
-  height: 2rem;
-  width: 1.7rem;
-  background: url("/styles/resources/social.png") no-repeat;
-}
-/* line 21, ../sass/_social.scss */
-html body .social .networks a .network.google {
-  background-position: 2px -63px;
-}
-/* line 24, ../sass/_social.scss */
-html body .social .networks a .network.facebook {
-  background-position: 0 -1px;
-}
-/* line 27, ../sass/_social.scss */
-html body .social .networks a .network.twitter {
-  background-position: 0 -30px;
-}
-/* line 31, ../sass/app.scss */
+/* line 30, ../sass/app.scss */
 html body div.ng-scope .page-container {
   width: 100%;
   max-width: 57rem;
   margin: 0px auto;
 }
 /* line 36, ../sass/app.scss */
-html body div.ng-scope .frame-container {
-  height: 100%;
-  min-height: 100%;
-  overflow: auto;
+html body div.ng-scope iframe {
+  width: 100%;
+  height: 99%;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: inline-block;
 }
 /* line 1, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub {
@@ -108,13 +132,14 @@ html body div.ng-scope header.sub {
   color: #3c3c3c;
   margin: 0px auto;
   position: relative;
+  margin: .5rem 0;
 }
-/* line 7, ../sass/_sub-header.scss */
+/* line 8, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub h1 {
   margin: 0 1rem;
   font-size: 2.5rem;
 }
-/* line 12, ../sass/_sub-header.scss */
+/* line 13, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.rank {
   position: absolute;
   background: none;
@@ -122,7 +147,7 @@ html body div.ng-scope header.sub.rank {
   margin-top: 0;
 }
 @media screen and (min-width: 500px) {
-  /* line 12, ../sass/_sub-header.scss */
+  /* line 13, ../sass/_sub-header.scss */
   html body div.ng-scope header.sub.rank {
     top: 1rem;
     right: 1rem;
@@ -131,7 +156,7 @@ html body div.ng-scope header.sub.rank {
   }
 }
 @media screen and (max-width: 500px) {
-  /* line 12, ../sass/_sub-header.scss */
+  /* line 13, ../sass/_sub-header.scss */
   html body div.ng-scope header.sub.rank {
     bottom: 0;
     right: 0;
@@ -139,9 +164,10 @@ html body div.ng-scope header.sub.rank {
     height: auto;
     width: auto;
     padding: 0;
+    margin: 0;
   }
 }
-/* line 34, ../sass/_sub-header.scss */
+/* line 36, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.rank button {
   border: none;
   outline: none;
@@ -154,27 +180,27 @@ html body div.ng-scope header.sub.rank button {
   text-transform: uppercase;
 }
 @media screen and (max-width: 500px) {
-  /* line 34, ../sass/_sub-header.scss */
+  /* line 36, ../sass/_sub-header.scss */
   html body div.ng-scope header.sub.rank button {
     margin: 0;
     border: 5px solid #3c3c3c;
     border-right: none;
     border-bottom: none;
   }
-  /* line 51, ../sass/_sub-header.scss */
+  /* line 53, ../sass/_sub-header.scss */
   html body div.ng-scope header.sub.rank button:before {
     content: '\2713';
     font-size: 1.5rem;
     padding: 0 .3rem;
   }
 }
-/* line 58, ../sass/_sub-header.scss */
+/* line 60, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.rank button.menu.expanded {
   background: #888888;
   color: #fec71c;
 }
 @media screen and (max-width: 500px) {
-  /* line 58, ../sass/_sub-header.scss */
+  /* line 60, ../sass/_sub-header.scss */
   html body div.ng-scope header.sub.rank button.menu.expanded {
     border: 5px solid #fec71c;
     border-right: none;
@@ -182,11 +208,11 @@ html body div.ng-scope header.sub.rank button.menu.expanded {
   }
 }
 @media screen and (min-width: 500px) {
-  /* line 69, ../sass/_sub-header.scss */
+  /* line 71, ../sass/_sub-header.scss */
   html body div.ng-scope header.sub.rank button:before {
     content: 'Rate It';
   }
-  /* line 73, ../sass/_sub-header.scss */
+  /* line 75, ../sass/_sub-header.scss */
   html body div.ng-scope header.sub.rank button.menu:after {
     content: '\2799';
     font-weight: bold;
@@ -194,7 +220,7 @@ html body div.ng-scope header.sub.rank button.menu.expanded {
     font-size: 1.3rem;
     vertical-align: middle;
   }
-  /* line 80, ../sass/_sub-header.scss */
+  /* line 82, ../sass/_sub-header.scss */
   html body div.ng-scope header.sub.rank button.menu.expanded:after {
     -webkit-transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
     transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
@@ -204,7 +230,7 @@ html body div.ng-scope header.sub.rank button.menu.expanded {
     -moz-transform: rotate(90deg);
     display: inline-block;
   }
-  /* line 89, ../sass/_sub-header.scss */
+  /* line 91, ../sass/_sub-header.scss */
   html body div.ng-scope header.sub.rank button.menu.collapsed:after {
     content: '\2799';
     -webkit-transform: rotate(90deg);
@@ -218,7 +244,7 @@ html body div.ng-scope header.sub.rank button.menu.expanded {
     -moz-transform: rotate(0deg);
   }
 }
-/* line 105, ../sass/_sub-header.scss */
+/* line 107, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.rank form.dropdown {
   height: 0;
   width: 0;
@@ -233,11 +259,11 @@ html body div.ng-scope header.sub.rank form.dropdown {
   border: 5px solid #fec71c;
 }
 @media screen and (min-width: 500px) {
-  /* line 105, ../sass/_sub-header.scss */
+  /* line 107, ../sass/_sub-header.scss */
   html body div.ng-scope header.sub.rank form.dropdown {
     top: -2.5rem;
   }
-  /* line 121, ../sass/_sub-header.scss */
+  /* line 123, ../sass/_sub-header.scss */
   html body div.ng-scope header.sub.rank form.dropdown.visible {
     -webkit-transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
     transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
@@ -249,12 +275,12 @@ html body div.ng-scope header.sub.rank form.dropdown {
   }
 }
 @media screen and (max-width: 500px) {
-  /* line 105, ../sass/_sub-header.scss */
+  /* line 107, ../sass/_sub-header.scss */
   html body div.ng-scope header.sub.rank form.dropdown {
     right: 0;
     top: 0;
   }
-  /* line 137, ../sass/_sub-header.scss */
+  /* line 139, ../sass/_sub-header.scss */
   html body div.ng-scope header.sub.rank form.dropdown.visible {
     -webkit-transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
     transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
@@ -266,21 +292,21 @@ html body div.ng-scope header.sub.rank form.dropdown {
     border-right: none;
   }
 }
-/* line 151, ../sass/_sub-header.scss */
+/* line 153, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.rank form.dropdown .field {
   display: inline-block;
   margin-right: 1rem;
 }
-/* line 155, ../sass/_sub-header.scss */
+/* line 157, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.rank form.dropdown .field input[type=range] {
   width: 9rem;
 }
-/* line 159, ../sass/_sub-header.scss */
+/* line 161, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.rank form.dropdown .field label {
   display: block;
   color: white;
 }
-/* line 164, ../sass/_sub-header.scss */
+/* line 166, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.rank form.dropdown input[type=submit] {
   vertical-align: top;
   margin-top: .5rem;
@@ -290,17 +316,17 @@ html body div.ng-scope header.sub.rank form.dropdown input[type=submit] {
   color: #3c3c3c;
   padding: .5rem;
 }
-/* line 175, ../sass/_sub-header.scss */
+/* line 177, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.toolbar {
   text-align: center;
   padding: .5rem;
   box-sizing: border-box;
 }
-/* line 180, ../sass/_sub-header.scss */
+/* line 182, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.toolbar h2 {
   color: #3c3c3c;
 }
-/* line 184, ../sass/_sub-header.scss */
+/* line 186, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.toolbar span.toggle button {
   border: none;
   outline: none;
@@ -312,41 +338,30 @@ html body div.ng-scope header.sub.toolbar span.toggle button {
   text-transform: uppercase;
   cursor: pointer;
 }
-/* line 195, ../sass/_sub-header.scss */
+/* line 197, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.toolbar span.toggle button.selected {
   background: #888888;
 }
-/* line 42, ../sass/app.scss */
-html body div.ng-scope iframe {
-  width: 100%;
-  height: 99%;
-  border: none;
-  outline: none;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  display: inline-block;
-}
-/* line 52, ../sass/app.scss */
+/* line 48, ../sass/app.scss */
 html body div.ng-scope section, html body div.ng-scope section section {
   margin: 0px auto;
   vertical-align: top;
 }
-/* line 56, ../sass/app.scss */
+/* line 52, ../sass/app.scss */
 html body div.ng-scope section.rank, html body div.ng-scope section section.rank {
   width: 100%;
   margin: 0;
 }
-/* line 61, ../sass/app.scss */
+/* line 57, ../sass/app.scss */
 html body div.ng-scope section#orgs, html body div.ng-scope section section#orgs {
   text-align: center;
   width: 100%;
 }
-/* line 65, ../sass/app.scss */
+/* line 61, ../sass/app.scss */
 html body div.ng-scope section.toggle, html body div.ng-scope section section.toggle {
   display: none;
 }
-/* line 68, ../sass/app.scss */
+/* line 64, ../sass/app.scss */
 html body div.ng-scope section.toggle:first-of-type, html body div.ng-scope section section.toggle:first-of-type {
   display: inherit;
 }
@@ -390,16 +405,12 @@ html body div.ng-scope section.feed header, html body div.ng-scope section secti
   margin-right: 2rem;
   border-top: 1px solid #fec71c;
 }
-/* line 13, ../sass/_feed.scss */
-html body div.ng-scope section.feed header:first-child.expandable.expanded, html body div.ng-scope section section.feed header:first-child.expandable.expanded, html body div.ng-scope section section.feed header:first-child.expandable.expanded, html body div.ng-scope section section section.feed header:first-child.expandable.expanded {
-  border-top: 1px solid #3c3c3c;
-}
-/* line 18, ../sass/_feed.scss */
+/* line 12, ../sass/_feed.scss */
 html body div.ng-scope section.feed header.expandable.expanded, html body div.ng-scope section section.feed header.expandable.expanded, html body div.ng-scope section section.feed header.expandable.expanded, html body div.ng-scope section section section.feed header.expandable.expanded {
   background: #fec71c;
   color: #3c3c3c;
 }
-/* line 22, ../sass/_feed.scss */
+/* line 16, ../sass/_feed.scss */
 html body div.ng-scope section.feed header.expandable.expanded:before, html body div.ng-scope section section.feed header.expandable.expanded:before, html body div.ng-scope section section.feed header.expandable.expanded:before, html body div.ng-scope section section section.feed header.expandable.expanded:before {
   width: 0;
   height: 0;
@@ -416,19 +427,19 @@ html body div.ng-scope section.feed header.expandable.expanded:before, html body
   -webkit-margin-before: .1rem;
   float: left;
 }
-/* line 38, ../sass/_feed.scss */
+/* line 32, ../sass/_feed.scss */
 html body div.ng-scope section.feed header.expandable.expanded h1, html body div.ng-scope section section.feed header.expandable.expanded h1, html body div.ng-scope section section.feed header.expandable.expanded h1, html body div.ng-scope section section section.feed header.expandable.expanded h1 {
   position: relative;
   left: -2.5rem;
 }
-/* line 44, ../sass/_feed.scss */
+/* line 38, ../sass/_feed.scss */
 html body div.ng-scope section.feed header.expandable h1:before, html body div.ng-scope section section.feed header.expandable h1:before, html body div.ng-scope section section.feed header.expandable h1:before, html body div.ng-scope section section section.feed header.expandable h1:before {
   content: '\2799';
   font-weight: bold;
   margin: 0 1rem;
   font-size: 1.5rem;
 }
-/* line 50, ../sass/_feed.scss */
+/* line 44, ../sass/_feed.scss */
 html body div.ng-scope section.feed header.expandable.expanded h1:before, html body div.ng-scope section section.feed header.expandable.expanded h1:before, html body div.ng-scope section section.feed header.expandable.expanded h1:before, html body div.ng-scope section section section.feed header.expandable.expanded h1:before {
   -webkit-transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
   transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
@@ -438,7 +449,7 @@ html body div.ng-scope section.feed header.expandable.expanded h1:before, html b
   -moz-transform: rotate(90deg);
   display: inline-block;
 }
-/* line 59, ../sass/_feed.scss */
+/* line 53, ../sass/_feed.scss */
 html body div.ng-scope section.feed header.expandable.collapsed h1:before, html body div.ng-scope section section.feed header.expandable.collapsed h1:before, html body div.ng-scope section section.feed header.expandable.collapsed h1:before, html body div.ng-scope section section section.feed header.expandable.collapsed h1:before {
   content: '\2799';
   -webkit-transform: rotate(90deg);
@@ -451,7 +462,7 @@ html body div.ng-scope section.feed header.expandable.collapsed h1:before, html 
   transform: rotate(0deg);
   -moz-transform: rotate(0deg);
 }
-/* line 72, ../sass/_feed.scss */
+/* line 66, ../sass/_feed.scss */
 html body div.ng-scope section.feed header h1, html body div.ng-scope section section.feed header h1, html body div.ng-scope section section.feed header h1, html body div.ng-scope section section section.feed header h1 {
   padding: 0;
   margin: 0;
@@ -459,13 +470,13 @@ html body div.ng-scope section.feed header h1, html body div.ng-scope section se
   border: none;
   display: inline-block;
 }
-/* line 81, ../sass/_feed.scss */
+/* line 75, ../sass/_feed.scss */
 html body div.ng-scope section.feed .article-container, html body div.ng-scope section section.feed .article-container, html body div.ng-scope section section.feed .article-container, html body div.ng-scope section section section.feed .article-container {
   margin-left: 4rem;
   margin-right: 4rem;
   display: none;
 }
-/* line 86, ../sass/_feed.scss */
+/* line 80, ../sass/_feed.scss */
 html body div.ng-scope section.feed .article-container article, html body div.ng-scope section section.feed .article-container article, html body div.ng-scope section section.feed .article-container article, html body div.ng-scope section section section.feed .article-container article {
   background: #3c3c3c;
   color: white;
@@ -480,7 +491,7 @@ html body div.ng-scope section.feed .article-container article, html body div.ng
   display: inline-block;
   vertical-align: top;
 }
-/* line 100, ../sass/_feed.scss */
+/* line 94, ../sass/_feed.scss */
 html body div.ng-scope section.feed .article-container article .rank, html body div.ng-scope section section.feed .article-container article .rank, html body div.ng-scope section section.feed .article-container article .rank, html body div.ng-scope section section section.feed .article-container article .rank {
   float: right;
   font-size: 1.5rem;
@@ -498,7 +509,7 @@ html body div.ng-scope section.feed .article-container article .rank, html body 
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-/* line 119, ../sass/_feed.scss */
+/* line 113, ../sass/_feed.scss */
 html body div.ng-scope section.feed .article-container h2, html body div.ng-scope section section.feed .article-container h2, html body div.ng-scope section section.feed .article-container h2, html body div.ng-scope section section section.feed .article-container h2 {
   font-size: 1.2rem;
   color: #fec71c;
@@ -506,19 +517,19 @@ html body div.ng-scope section.feed .article-container h2, html body div.ng-scop
   max-height: 3rem;
   overflow: hidden;
 }
-/* line 126, ../sass/_feed.scss */
+/* line 120, ../sass/_feed.scss */
 html body div.ng-scope section.feed .article-container .date, html body div.ng-scope section section.feed .article-container .date, html body div.ng-scope section section.feed .article-container .date, html body div.ng-scope section section section.feed .article-container .date {
   font-size: .9rem;
   margin-bottom: .5rem;
 }
-/* line 130, ../sass/_feed.scss */
+/* line 124, ../sass/_feed.scss */
 html body div.ng-scope section.feed .article-container img, html body div.ng-scope section section.feed .article-container img, html body div.ng-scope section section.feed .article-container img, html body div.ng-scope section section section.feed .article-container img {
   display: inline-block;
   max-width: 8rem;
   max-height: 5rem;
   border: 2px solid #888888;
 }
-/* line 137, ../sass/_feed.scss */
+/* line 131, ../sass/_feed.scss */
 html body div.ng-scope section.feed .article-container .snippet, html body div.ng-scope section section.feed .article-container .snippet, html body div.ng-scope section section.feed .article-container .snippet, html body div.ng-scope section section section.feed .article-container .snippet {
   display: inline-block;
   max-width: 25rem;

@@ -7,7 +7,6 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
     }
     $scope.expandedFeed = null;
     $scope.selectedIndex = null;
-    $scope.isReturn = false;
 
     $scope.loadFeeds = function (org_id) {
         FeedsFactory.read(org_id, function (data) {
@@ -22,7 +21,6 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
                         setTimeout(function () {
                             $($('header.collapsed')[$scope.selectedIndex]).trigger('click');
                         }, 500);
-                        $scope.isReturn = true;
                     }
                 });
                 if (!found) {
@@ -73,8 +71,8 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
                 });
                 $scope.expandedFeed = feed;
 
-                if ($scope.isReturn) {
-                    var selectedArticle = ArticleFactory.getCurrentArticle();
+                var selectedArticle = ArticleFactory.getCurrentArticle();
+                if (selectedArticle) {
                     angular.forEach(feed.articles, function (article, index) {
                         if (article.link === selectedArticle.link) {
                             setTimeout(function () {
@@ -83,8 +81,8 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
                                 }, 500);
                             }, 500);
                         }
+                        ArticleFactory.setCurrentArticle(null);
                     });
-                    $scope.isReturn  = false;
                 }
             });
         }

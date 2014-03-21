@@ -2,6 +2,7 @@ header {
   background: $black;
   max-width: 100%;
 
+  @import "navigation";
   .container {
     width: 80%;
     margin: 0px auto;

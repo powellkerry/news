@@ -1,11 +1,10 @@
 var app = angular.module('topnews');
 
-app.controller('OrgController', function ($scope, $location, OrgFactory, ArticleFactory) {
+app.controller('OrgController', function ($scope, $routeParams, $location, OrgFactory, ArticleFactory) {
     $scope.orgs = [];
     $scope.articles = [];
     $scope.categories = [];
     $scope.sortBy = 'avgRank';
-    $scope.location = $location;
 
     $scope.sortDirection = function () {
         var isASC = true;
@@ -24,14 +23,25 @@ app.controller('OrgController', function ($scope, $location, OrgFactory, Article
     $scope.loadArticles = function () {
         ArticleFactory.loadArticles(function (data) {
             $scope.articles = data;
-            angular.forEach($scope.articles, function (article) {
+            var selectedArticle = ArticleFactory.getCurrentArticle();
+            angular.forEach($scope.articles, function (article, index) {
                 article.mediaGroups = JSON.parse(article.mediaGroups);
                 if ($scope.categories.indexOf(article.category_name) === -1) {
                     $scope.categories.push(article.category_name);
                 }
                 var match = article.publishedDate.match(/^(\d+)-(\d+)-(\d+) (\d+)\:(\d+)\:(\d+)$/);
                 article.publishedDate = new Date(match[1], match[2] - 1, match[3], match[4], match[5], match[6]);
+
+                if (selectedArticle && article.link === selectedArticle.link) {
+                    setTimeout(function () {
+                        $('html, body').animate({
+                            scrollTop: $($('a.article')[index]).offset().top
+                        }, 500);
+                        ArticleFactory.setCurrentArticle(null);
+                    }, 1000);
+                }
             });
+
             setTimeout(function () {
                 $($('header.collapsed')[0]).trigger('click');
             }, 500);
@@ -57,7 +67,12 @@ app.controller('OrgController', function ($scope, $location, OrgFactory, Article
     };
 
     $scope.toggle = function ($event, section) {
+        $event.preventDefault();
         $('.toggle button.selected').removeClass('selected');
+        var hash = 'home/' + $($event.target).attr('class');
+        if (window.location.hash !== hash) {
+            $location.path(hash).replace();
+        }
         $($event.target).addClass('selected');
         $('section.toggle').hide();
         $('#' + section).show();
@@ -81,4 +96,9 @@ app.controller('OrgController', function ($scope, $location, OrgFactory, Article
 
     $scope.loadOrgs();
     $scope.loadArticles();
+    if ($routeParams.toggle) {
+        setTimeout(function () {
+            $('button.' + $routeParams.toggle).trigger('click');
+        }, 500);
+    }
 });

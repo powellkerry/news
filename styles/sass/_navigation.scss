@@ -1,12 +1,33 @@
-.social {
+.nav {
   background: $gray;
   height: 1.8rem;
   border-top: 1px solid $yellow;
   border-bottom: 1px solid $black;
-  text-align: right;
+
+  .breadcrumbs {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 1rem;
+
+    .breadcrumb {
+      a {
+        color: $white;
+        font-size: 1.5rem;
+      }
+
+      &:not(:last-child):after {
+        content: '>';
+        font-size: 1.5rem;
+        color: $white;
+      }
+    }
+  }
 
   .networks {
     padding-right: .5rem;
+    float: right;
+    display: inline-block;
+    height: 1rem;
 
     a {
       cursor: pointer;

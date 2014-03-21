@@ -3,12 +3,20 @@ var app = angular.module('topnews');
 app.factory('ArticleFactory', function ($http) {
     return {
         setCurrentArticle: function (article) {
-            window.localStorage.setItem('currentArticle', JSON.stringify(article));
+            if (article === null) {
+                window.localStorage.removeItem('currentArticle');
+            } else {
+                window.localStorage.setItem('currentArticle', JSON.stringify(article));
+            }
         },
         getCurrentArticle: function () {
-            return JSON.parse(window.localStorage.getItem('currentArticle'));
+            var article = false;
+            if (window.localStorage.getItem('currentArticle') !== 'null') {
+                article = JSON.parse(window.localStorage.getItem('currentArticle'));
+            }
+            return article;
         },
-        loadArticle: function(article_id, callback) {
+        loadArticle: function (article_id, callback) {
             $http.post('server/request.php?action=loadArticle', {article_id: article_id}).success(callback);
         },
         loadArticles: function (callback) {

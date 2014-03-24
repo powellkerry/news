@@ -8,7 +8,13 @@ app.factory('OrgFactory', function ($http) {
         getCurrentOrg: function () {
             return JSON.parse(window.localStorage.getItem('currentOrg'));
         },
-        loadOrg: function(article_id, callback) {
+        setCurrentCategories: function (categories) {
+            window.localStorage.setItem('currentCategories', JSON.stringify(categories));
+        },
+        getCurrentCategories: function () {
+            return JSON.parse(window.localStorage.getItem('currentCategories'));
+        },
+        loadOrg: function (article_id, callback) {
             $http.post('server/request.php?action=loadOrg', {article_id: article_id}).success(callback);
         },
         read: function (callback) {

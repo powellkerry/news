@@ -110,17 +110,13 @@ html body header .container h1 .yellow {
 html body header .container h1 .gray {
   color: #888888;
 }
-/* line 1, ../sass/_social.scss */
-html body .social-container {
-  display: none;
-}
-/* line 31, ../sass/app.scss */
+/* line 30, ../sass/app.scss */
 html body div.ng-scope .page-container {
   width: 100%;
   max-width: 57rem;
   margin: 0px auto;
 }
-/* line 37, ../sass/app.scss */
+/* line 36, ../sass/app.scss */
 html body div.ng-scope iframe {
   width: 100%;
   height: 99%;
@@ -347,58 +343,121 @@ html body div.ng-scope header.sub.toolbar span.toggle button {
 html body div.ng-scope header.sub.toolbar span.toggle button.selected {
   background: #888888;
 }
-/* line 49, ../sass/app.scss */
+/* line 48, ../sass/app.scss */
 html body div.ng-scope section, html body div.ng-scope section section {
   margin: 0px auto;
   vertical-align: top;
 }
-/* line 53, ../sass/app.scss */
+/* line 52, ../sass/app.scss */
 html body div.ng-scope section.rank, html body div.ng-scope section section.rank {
   width: 100%;
   margin: 0;
 }
-/* line 58, ../sass/app.scss */
+/* line 57, ../sass/app.scss */
 html body div.ng-scope section#orgs, html body div.ng-scope section section#orgs {
   text-align: center;
   width: 100%;
 }
-/* line 62, ../sass/app.scss */
+/* line 61, ../sass/app.scss */
 html body div.ng-scope section.toggle, html body div.ng-scope section section.toggle {
   display: none;
 }
-/* line 65, ../sass/app.scss */
+/* line 64, ../sass/app.scss */
 html body div.ng-scope section.toggle:first-of-type, html body div.ng-scope section section.toggle:first-of-type {
   display: inherit;
 }
 /* line 1, ../sass/_options.scss */
-html body div.ng-scope section .options, html body div.ng-scope section section .options {
+html body div.ng-scope section .toolbar, html body div.ng-scope section section .toolbar {
   background: #3c3c3c;
   color: #fec71c;
   padding: .5rem;
   display: block;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  text-align: center;
+  text-align: left;
+  min-height: 3.5rem;
 }
-/* line 10, ../sass/_options.scss */
-html body div.ng-scope section .options .field, html body div.ng-scope section section .options .field {
-  margin: 0 .5rem;
+/* line 11, ../sass/_options.scss */
+html body div.ng-scope section .toolbar .buttons, html body div.ng-scope section section .toolbar .buttons {
+  float: right;
 }
-/* line 12, ../sass/_options.scss */
-html body div.ng-scope section .options .field label, html body div.ng-scope section section .options .field label {
+/* line 14, ../sass/_options.scss */
+html body div.ng-scope section .toolbar .buttons .menu, html body div.ng-scope section section .toolbar .buttons .menu {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #FFF;
+}
+/* line 21, ../sass/_options.scss */
+html body div.ng-scope section .toolbar .buttons .menu.active, html body div.ng-scope section section .toolbar .buttons .menu.active {
+  color: #fec71c;
+}
+/* line 25, ../sass/_options.scss */
+html body div.ng-scope section .toolbar .buttons .menu:before, html body div.ng-scope section section .toolbar .buttons .menu:before {
+  display: inline-block;
+  content: "\2261";
+  font-size: 2rem;
+}
+/* line 33, ../sass/_options.scss */
+html body div.ng-scope section .toolbar .options, html body div.ng-scope section section .toolbar .options {
+  position: absolute;
+  background: #3c3c3c;
+  padding: .5rem;
+  overflow: hidden;
+  border: 3px solid #fec71c;
+  margin-top: .5rem;
+}
+/* line 41, ../sass/_options.scss */
+html body div.ng-scope section .toolbar .options.hidden, html body div.ng-scope section section .toolbar .options.hidden {
+  -webkit-transition: all cubic-bezier(0, 0, 1, 1) 0.3s;
+  transition: all cubic-bezier(0, 0, 1, 1) 0.3s;
+  opacity: 0;
+  z-index: -1;
+}
+/* line 48, ../sass/_options.scss */
+html body div.ng-scope section .toolbar .options.visible, html body div.ng-scope section section .toolbar .options.visible {
+  display: block;
+  -webkit-transition: all cubic-bezier(0, 0, 1, 1) 0.3s;
+  transition: all cubic-bezier(0, 0, 1, 1) 0.3s;
+  opacity: 1;
+  z-index: 1;
+}
+/* line 56, ../sass/_options.scss */
+html body div.ng-scope section .toolbar .options .field, html body div.ng-scope section section .toolbar .options .field {
+  margin: 1rem;
+}
+/* line 58, ../sass/_options.scss */
+html body div.ng-scope section .toolbar .options .field label, html body div.ng-scope section section .toolbar .options .field label {
   font-weight: bold;
   font-size: 1.2rem;
+  margin-right: .5rem;
+  display: inline-block;
+  vertical-align: top;
 }
-/* line 17, ../sass/_options.scss */
-html body div.ng-scope section .options .field select, html body div.ng-scope section section .options .field select {
+/* line 66, ../sass/_options.scss */
+html body div.ng-scope section .toolbar .options .field select, html body div.ng-scope section section .toolbar .options .field select {
   border: none;
   padding: .1rem;
   font-size: 1rem;
   width: 6rem;
 }
-/* line 24, ../sass/_options.scss */
-html body div.ng-scope section .options .field input[type=search], html body div.ng-scope section section .options .field input[type=search] {
-  width: 6rem;
+/* line 73, ../sass/_options.scss */
+html body div.ng-scope section .toolbar .options .field input[type=search], html body div.ng-scope section section .toolbar .options .field input[type=search] {
+  width: 12rem;
+}
+/* line 77, ../sass/_options.scss */
+html body div.ng-scope section .toolbar .options .field .checkbox-group, html body div.ng-scope section section .toolbar .options .field .checkbox-group {
+  display: inline-block;
+  max-width: 12rem;
+}
+/* line 81, ../sass/_options.scss */
+html body div.ng-scope section .toolbar .options .field .checkbox-group label, html body div.ng-scope section section .toolbar .options .field .checkbox-group label {
+  width: 10rem;
+}
+/* line 87, ../sass/_options.scss */
+html body div.ng-scope section .toolbar .field, html body div.ng-scope section section .toolbar .field {
+  padding: .5rem;
 }
 /* line 3, ../sass/_feed.scss */
 html body div.ng-scope section.feed header, html body div.ng-scope section section.feed header, html body div.ng-scope section section.feed header, html body div.ng-scope section section section.feed header {

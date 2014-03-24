@@ -44,7 +44,7 @@ app.controller('AppController', function ($scope, BreadcrumbFactory, MobileFacto
         window.open(url, '_blank', 'modal=yes');
     };
 
-    $scope.isIos = function() {
+    $scope.isIos = function () {
         return MobileFactory.isIos();
     };
 

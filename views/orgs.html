@@ -6,24 +6,47 @@
         </span>
     </header>
     <section id="rank" class="toggle">
-        <span class="options">
-            <span class="field">
-                <label for="sortBy">Sort By:</label>
-                <select id="sortBy" ng-model="sortBy">
-                    <option value="avgRank">Average</option>
-                    <option value="bias">Bias</option>
-                    <option value="quality">Quality</option>
-                    <option value="relevance">Relevance</option>
-                    <option value="popularity">Popularity</option>
+        <span class="toolbar">
+            <span class="buttons">
+                <button class="menu" rel="options-rank" ng-click="toggleOptions($event)"></button>
+            </span>
+            <div class="options options-rank hidden">
+                <div class="field">
+                    <label for="sortBy">Sort By:</label>
+                    <select id="sortBy" ng-model="sortBy">
+                        <option value="avgRank">Average</option>
+                        <option value="bias">Bias</option>
+                        <option value="quality">Quality</option>
+                        <option value="relevance">Relevance</option>
+                        <option value="popularity">Popularity</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="filter">Search: </label>
+                    <input type="search" id="filter" ng-model="filter">
+                </div>
+                <div class="field">
+                    <label>Topics:</label>
+                    <span class="checkbox-group">
+                        <span ng-repeat="category in categories">
+                            <input ng-if="isSelectedCategory(category)" type="checkbox" id="{{category}}" checked="checked"
+                                   ng-click="updateSelectedCategories($event)">
+                            <input ng-if="!isSelectedCategory(category)" type="checkbox" id="{{category}}"
+                                   ng-click="updateSelectedCategories($event)">
+                            <label for="{{category}}">{{category}}</label>
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="field">
+                <label>Go To:</label>
+                <select ng-model="selectedCategory" ng-change="goToSelectedCategory()">
+                    <option ng-repeat="category in selectedCategories" value="{{category}}">{{category}}</option>
                 </select>
-            </span>
-            <span class="field">
-                <label for="filter">Search: </label>
-                <input type="search" id="filter" ng-model="filter">
-            </span>
+            </div>
         </span>
-        <section class="feed" ng-repeat="category in categories">
-            <header class="expandable collapsed" ng-click="toggleCategory($event)">
+        <section class="feed" ng-repeat="category in selectedCategories | orderBy">
+            <header class="expandable collapsed {{category}}" ng-click="toggleCategory($event)">
                 <h1>{{category}}</h1>
             </header>
             <div class="article-container">
@@ -31,7 +54,7 @@
                    ng-click="setCurrentArticle(article)"
                    ng-repeat="article in articles | orderBy : sortBy : sortDirection() | filter : filter"
                    ng-if="article.category_name == category"
-                        >
+                >
                     <article>
                         <div class="rank">{{getRank(article)}}</div>
                         <h2 itemprop="name">{{article.title}}</h2>
@@ -45,11 +68,16 @@
         </section>
     </section>
     <section id="orgs" class="toggle">
-        <span class="options search">
-            <span class="field">
-                <label for="find">Search:</label>
-                <input type="search" id="find" ng-model="find"/>
-            </span>
+        <span class="toolbar">
+            <span class="buttons">
+                    <button class="menu" rel="options-orgs" ng-click="toggleOptions($event)"></button>
+                </span>
+            <div class="options options-orgs hidden">
+                <span class="field">
+                    <label for="find">Search:</label>
+                    <input type="search" id="find" ng-model="find"/>
+                </span>
+            </div>
         </span>
         <a itemscope itemtype="http://schema.org/Organization" ng-repeat="org in orgs | filter:find" ng-click="setCurrentOrg(org)" title="{{org.org_name}}">
             <span class="helper"></span>

@@ -1,28 +1,90 @@
-.options {
+.toolbar {
   background: $black;
   color: $yellow;
   padding: .5rem;
   display: block;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  text-align: center;
+  text-align: left;
+  min-height: 3.5rem;
 
-  .field {
-    margin: 0 .5rem;
-    label {
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
+  .buttons {
+    float: right;
 
-    select {
+    .menu {
+      background: none;
+      outline: none;
       border: none;
-      padding: .1rem;
-      font-size: 1rem;
-      width: 6rem;
+      cursor: pointer;
+      color: #FFF;
+
+      &.active {
+        color: $yellow;
+      }
+
+      &:before {
+        display: inline-block;
+        content: "\2261";
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .options {
+    position: absolute;
+    background: $black;
+    padding: .5rem;
+    overflow: hidden;
+    border: 3px solid $yellow;
+    margin-top: .5rem;
+
+    &.hidden {
+      -webkit-transition:all cubic-bezier(0,0,1,1) .3s;
+      transition:all cubic-bezier(0,0,1,1) .3s;
+      opacity: 0;
+      z-index: -1;
     }
 
-    input[type=search] {
-      width: 6rem;
+    &.visible {
+      display: block;
+      -webkit-transition:all cubic-bezier(0,0,1,1) .3s;
+      transition:all cubic-bezier(0,0,1,1) .3s;
+      opacity: 1;
+      z-index: 1;
     }
+
+    .field {
+      margin: 1rem;
+      label {
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-right: .5rem;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      select {
+        border: none;
+        padding: .1rem;
+        font-size: 1rem;
+        width: 6rem;
+      }
+
+      input[type=search] {
+        width: 12rem;
+      }
+
+      .checkbox-group {
+        display: inline-block;
+        max-width: 12rem;
+
+        label {
+          width: 10rem;
+        }
+      }
+    }
+  }
+  .field {
+    padding: .5rem;
   }
 }

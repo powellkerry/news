@@ -27,6 +27,8 @@ html {
 
     @import "header";
     div.ng-scope {
+      margin-bottom: 3rem;
+
       .page-container {
         width: 100%;
         max-width: 57rem;
@@ -69,6 +71,20 @@ html {
         @import "options";
         @import "feed";
         @import "org";
+      }
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      text-align: center;
+      width: 100%;
+      background: $black;
+      color: $white;
+      padding: .5rem;
+      border-top: 2px solid $gray;
+
+      a {
+        color: $white;
       }
     }
   }

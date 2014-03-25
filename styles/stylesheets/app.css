@@ -110,13 +110,17 @@ html body header .container h1 .yellow {
 html body header .container h1 .gray {
   color: #888888;
 }
-/* line 30, ../sass/app.scss */
+/* line 29, ../sass/app.scss */
+html body div.ng-scope {
+  margin-bottom: 3rem;
+}
+/* line 32, ../sass/app.scss */
 html body div.ng-scope .page-container {
   width: 100%;
   max-width: 57rem;
   margin: 0px auto;
 }
-/* line 36, ../sass/app.scss */
+/* line 38, ../sass/app.scss */
 html body div.ng-scope iframe {
   width: 100%;
   height: 99%;
@@ -343,26 +347,26 @@ html body div.ng-scope header.sub.toolbar span.toggle button {
 html body div.ng-scope header.sub.toolbar span.toggle button.selected {
   background: #888888;
 }
-/* line 48, ../sass/app.scss */
+/* line 50, ../sass/app.scss */
 html body div.ng-scope section, html body div.ng-scope section section {
   margin: 0px auto;
   vertical-align: top;
 }
-/* line 52, ../sass/app.scss */
+/* line 54, ../sass/app.scss */
 html body div.ng-scope section.rank, html body div.ng-scope section section.rank {
   width: 100%;
   margin: 0;
 }
-/* line 57, ../sass/app.scss */
+/* line 59, ../sass/app.scss */
 html body div.ng-scope section#orgs, html body div.ng-scope section section#orgs {
   text-align: center;
   width: 100%;
 }
-/* line 61, ../sass/app.scss */
+/* line 63, ../sass/app.scss */
 html body div.ng-scope section.toggle, html body div.ng-scope section section.toggle {
   display: none;
 }
-/* line 64, ../sass/app.scss */
+/* line 66, ../sass/app.scss */
 html body div.ng-scope section.toggle:first-of-type, html body div.ng-scope section section.toggle:first-of-type {
   display: inherit;
 }
@@ -629,6 +633,21 @@ html body div.ng-scope section a:not(.article) .helper, html body div.ng-scope s
 html body div.ng-scope section a:not(.article) img, html body div.ng-scope section section a:not(.article) img {
   max-width: 10rem;
   vertical-align: middle;
+}
+/* line 76, ../sass/app.scss */
+html body footer {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  background: #3c3c3c;
+  color: white;
+  padding: .5rem;
+  border-top: 2px solid #888888;
+}
+/* line 86, ../sass/app.scss */
+html body footer a {
+  color: white;
 }
 
 /*@ sourceMappingURL=app.css.map */

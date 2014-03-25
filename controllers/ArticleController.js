@@ -2,8 +2,8 @@ var app = angular.module('topnews');
 
 app.controller('ArticleController', function ($scope, $routeParams, $sce, OrgFactory, ArticleFactory, MobileFactory) {
     if (!MobileFactory.isIos()) {
-        $('.view-container').css('max-height', ($(window).height() - $('.site-header').height()) + 'px');
-        $('.view-container').css('height', ($(window).height() - $('.site-header').height()) + 'px');
+        $('.view-container').css('max-height', ($(window).height() - $('.site-header').height()) - 48 + 'px');
+        $('.view-container').css('height', ($(window).height() - $('.site-header').height()) - 48 + 'px');
     }
 
     $scope.renderPage = function () {

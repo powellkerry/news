@@ -1,16 +1,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://www.newzrank.com/#!/</loc>
+        <loc>http://localhost/#!/home/rank</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>http://localhost/#!/home/org</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>http://www.newzrank.com/</loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>http://www.newzrank.com/#!/org</loc>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://www.newzrank.com/#!/</loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>

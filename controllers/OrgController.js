@@ -103,6 +103,10 @@ app.controller('OrgController', function ($scope, $routeParams, $location, OrgFa
             setTimeout(function () {
                 $($('header.collapsed')[0]).trigger('click');
             }, 500);
+
+            if ($scope.articles.length === 0) {
+                $('.toolbar .toggle .org').trigger('click');
+            }
         });
     };
 

@@ -1,11 +1,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://localhost/#!/home/rank</loc>
+        <loc>http://www.newzrank.com/#!/home/rank</loc>
         <changefreq>always</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>http://localhost/#!/home/org</loc>
+        <loc>http://www.newzrank.com/#!/home/org</loc>
         <changefreq>always</changefreq>
         <priority>1.0</priority>
     </url>

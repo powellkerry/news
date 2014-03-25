@@ -50,7 +50,7 @@ class Articles {
              FROM news_articles a
              LEFT JOIN news_feedback f ON (a.article_id = f.article_id)
              LEFT JOIN news_categories c ON (c.category_id = a.category_id)
-             WHERE publishedDate BETWEEN (NOW() - INTERVAL 7 DAY) AND NOW()
+             WHERE publishedDate BETWEEN (NOW() - INTERVAL 7 DAY) AND (NOW() + INTERVAL 1 DAY)
              GROUP BY a.article_id, a.org_id, a.title, a.publishedDate, a.mediaGroups, a.contentSnippet, a.link, c.category_name
              ORDER BY category_name, avgRank DESC, publishedDate DESC"
         );

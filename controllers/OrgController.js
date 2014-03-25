@@ -77,7 +77,9 @@ app.controller('OrgController', function ($scope, $routeParams, $location, OrgFa
         ArticleFactory.loadArticles(function (data) {
             $scope.articles = data;
             if ($scope.articles.length === 0) {
-                $('.toolbar .toggle .org').trigger('click');
+                setTimeout(function () {
+                    $('.toolbar .toggle .org').trigger('click');
+                }, 500);
             } else {
                 var selectedArticle = ArticleFactory.getCurrentArticle(),
                     prevCategories = OrgFactory.getCurrentCategories();

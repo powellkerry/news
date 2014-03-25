@@ -76,37 +76,38 @@ app.controller('OrgController', function ($scope, $routeParams, $location, OrgFa
     $scope.loadArticles = function () {
         ArticleFactory.loadArticles(function (data) {
             $scope.articles = data;
-            var selectedArticle = ArticleFactory.getCurrentArticle(),
-                prevCategories = OrgFactory.getCurrentCategories();
-            angular.forEach($scope.articles, function (article, index) {
-                article.mediaGroups = JSON.parse(article.mediaGroups);
-                if ($scope.categories.indexOf(article.category_name) === -1) {
-                    $scope.categories.push(article.category_name);
-                    $scope.selectedCategories.push(article.category_name);
-                }
-                var match = article.publishedDate.match(/^(\d+)-(\d+)-(\d+) (\d+)\:(\d+)\:(\d+)$/);
-                article.publishedDate = new Date(match[1], match[2] - 1, match[3], match[4], match[5], match[6]);
-
-                if (selectedArticle && article.link === selectedArticle.link) {
-                    setTimeout(function () {
-                        $('html, body').animate({
-                            scrollTop: $($('a.article')[index]).offset().top
-                        }, 500);
-                        ArticleFactory.setCurrentArticle(null);
-                    }, 1000);
-                }
-            });
-            if (prevCategories) {
-                $scope.selectedCategories = prevCategories;
-            }
-
-            setTimeout(function () {
-                $($('header.collapsed')[0]).trigger('click');
-            }, 500);
-
             if ($scope.articles.length === 0) {
                 $('.toolbar .toggle .org').trigger('click');
+            } else {
+                var selectedArticle = ArticleFactory.getCurrentArticle(),
+                    prevCategories = OrgFactory.getCurrentCategories();
+                angular.forEach($scope.articles, function (article, index) {
+                    article.mediaGroups = JSON.parse(article.mediaGroups);
+                    if ($scope.categories.indexOf(article.category_name) === -1) {
+                        $scope.categories.push(article.category_name);
+                        $scope.selectedCategories.push(article.category_name);
+                    }
+                    var match = article.publishedDate.match(/^(\d+)-(\d+)-(\d+) (\d+)\:(\d+)\:(\d+)$/);
+                    article.publishedDate = new Date(match[1], match[2] - 1, match[3], match[4], match[5], match[6]);
+
+                    if (selectedArticle && article.link === selectedArticle.link) {
+                        setTimeout(function () {
+                            $('html, body').animate({
+                                scrollTop: $($('a.article')[index]).offset().top
+                            }, 500);
+                            ArticleFactory.setCurrentArticle(null);
+                        }, 1000);
+                    }
+                });
+                if (prevCategories) {
+                    $scope.selectedCategories = prevCategories;
+                }
+
+                setTimeout(function () {
+                    $($('header.collapsed')[0]).trigger('click');
+                }, 500);
             }
+
         });
     };
 

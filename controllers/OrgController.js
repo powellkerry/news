@@ -1,6 +1,6 @@
 var app = angular.module('topnews');
 
-app.controller('OrgController', function ($scope, $routeParams, $location, OrgFactory, ArticleFactory, MobileFactory) {
+app.controller('OrgController', function ($scope, $routeParams, $location, CategoryFactory, OrgFactory, ArticleFactory, MobileFactory) {
     $scope.orgs = [];
     $scope.articles = [];
     $scope.categories = [];
@@ -34,7 +34,7 @@ app.controller('OrgController', function ($scope, $routeParams, $location, OrgFa
             $scope.selectedCategories.push($check.attr('id'));
         }
         $scope.selectedCategories.sort();
-        OrgFactory.setCurrentCategories($scope.selectedCategories);
+        CategoryFactory.setCurrentCategories($scope.selectedCategories);
     };
 
     $scope.sortDirection = function () {
@@ -82,12 +82,24 @@ app.controller('OrgController', function ($scope, $routeParams, $location, OrgFa
                 }, 500);
             } else {
                 var selectedArticle = ArticleFactory.getCurrentArticle(),
-                    prevCategories = OrgFactory.getCurrentCategories();
+                    prevCategories = CategoryFactory.getCurrentCategories(),
+                    existingCategories = CategoryFactory.getAllCategories();
                 angular.forEach($scope.articles, function (article, index) {
                     article.mediaGroups = JSON.parse(article.mediaGroups);
                     if ($scope.categories.indexOf(article.category_name) === -1) {
                         $scope.categories.push(article.category_name);
                         $scope.selectedCategories.push(article.category_name);
+                    }
+                    if (!existingCategories || existingCategories.indexOf(article.category_name) === -1) {
+                        if (!existingCategories) {
+                            existingCategories = [];
+                        }
+                        if (prevCategories.indexOf(article.category_name) === -1) {
+                            prevCategories.push(article.category_name);
+                        }
+                        existingCategories.push(article.category_name);
+                        CategoryFactory.setAllCategories(existingCategories);
+                        CategoryFactory.setCurrentCategories(prevCategories);
                     }
                     var match = article.publishedDate.match(/^(\d+)-(\d+)-(\d+) (\d+)\:(\d+)\:(\d+)$/);
                     article.publishedDate = new Date(match[1], match[2] - 1, match[3], match[4], match[5], match[6]);

@@ -6,7 +6,7 @@ app.controller('OrgController', function ($scope, $routeParams, $location, Categ
     $scope.categories = [];
     $scope.selectedCategories = [];
     $scope.sortBy = 'avgRank';
-    $scope.selectedCategory = 'Business';
+    $scope.selectedCategory = '';
 
     $scope.isSelectedCategory = function (category) {
         var value = false;
@@ -93,6 +93,9 @@ app.controller('OrgController', function ($scope, $routeParams, $location, Categ
                     if (!existingCategories || existingCategories.indexOf(article.category_name) === -1) {
                         if (!existingCategories) {
                             existingCategories = [];
+                        }
+                        if (!prevCategories) {
+                            prevCategories = [];
                         }
                         if (prevCategories.indexOf(article.category_name) === -1) {
                             prevCategories.push(article.category_name);

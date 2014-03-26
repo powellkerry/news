@@ -133,8 +133,8 @@ html body div.ng-scope iframe {
 }
 /* line 1, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub {
-  background: #fec71c;
-  color: #3c3c3c;
+  background: #3c3c3c;
+  color: #fec71c;
   margin: 0px auto;
   position: relative;
   margin: .5rem 0;

@@ -1,4 +1,4 @@
-/* line 7, ../sass/app.scss */
+/* line 8, ../sass/app.scss */
 html {
   width: 100%;
   height: 100%;
@@ -7,14 +7,14 @@ html {
   font-family: 'Alegreya Sans', sans-serif;
   background: white;
 }
-/* line 15, ../sass/app.scss */
+/* line 16, ../sass/app.scss */
 html a, html h1, html h2, html img {
   border: none;
   text-decoration: none;
   padding: 0;
   margin: 0;
 }
-/* line 22, ../sass/app.scss */
+/* line 23, ../sass/app.scss */
 html body {
   width: 100%;
   height: 100%;
@@ -108,19 +108,19 @@ html body header .container h1 .yellow {
 }
 /* line 28, ../sass/_header.scss */
 html body header .container h1 .gray {
-  color: #888888;
+  color: #acacac;
 }
-/* line 29, ../sass/app.scss */
+/* line 30, ../sass/app.scss */
 html body div.ng-scope {
   margin-bottom: 3rem;
 }
-/* line 32, ../sass/app.scss */
+/* line 33, ../sass/app.scss */
 html body div.ng-scope .page-container {
   width: 100%;
   max-width: 57rem;
   margin: 0px auto;
 }
-/* line 38, ../sass/app.scss */
+/* line 39, ../sass/app.scss */
 html body div.ng-scope iframe {
   width: 100%;
   height: 99%;
@@ -359,26 +359,26 @@ html body div.ng-scope header.sub.toolbar span.toggle button.selected {
   background: #fec71c;
   color: #3c3c3c;
 }
-/* line 50, ../sass/app.scss */
+/* line 51, ../sass/app.scss */
 html body div.ng-scope section, html body div.ng-scope section section {
   margin: 0px auto;
   vertical-align: top;
 }
-/* line 54, ../sass/app.scss */
+/* line 55, ../sass/app.scss */
 html body div.ng-scope section.rank, html body div.ng-scope section section.rank {
   width: 100%;
   margin: 0;
 }
-/* line 59, ../sass/app.scss */
+/* line 60, ../sass/app.scss */
 html body div.ng-scope section#orgs, html body div.ng-scope section section#orgs {
   text-align: center;
   width: 100%;
 }
-/* line 63, ../sass/app.scss */
+/* line 64, ../sass/app.scss */
 html body div.ng-scope section.toggle, html body div.ng-scope section section.toggle {
   display: none;
 }
-/* line 66, ../sass/app.scss */
+/* line 67, ../sass/app.scss */
 html body div.ng-scope section.toggle:first-of-type, html body div.ng-scope section section.toggle:first-of-type {
   display: inherit;
 }
@@ -761,7 +761,7 @@ html body div.ng-scope .modal .message-box .action button {
     border-bottom: 1px solid;
   }
 }
-/* line 78, ../sass/app.scss */
+/* line 79, ../sass/app.scss */
 html body footer {
   position: fixed;
   bottom: 0;
@@ -772,7 +772,7 @@ html body footer {
   padding: .5rem;
   border-top: 2px solid #888888;
 }
-/* line 88, ../sass/app.scss */
+/* line 89, ../sass/app.scss */
 html body footer a {
   color: white;
 }

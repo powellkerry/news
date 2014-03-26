@@ -40,7 +40,7 @@ app.controller('ArticleController', function ($scope, $routeParams, $sce, OrgFac
             $scope.article.mediaGroups = "";
         }
         ArticleFactory.submitFeedback($scope.feedback, $scope.article.article_id, $scope.org_id, function () {
-            setTimeout(function() {
+            setTimeout(function () {
                 $('button.menu').trigger('click');
                 $('.modal').show();
             }, 500);
@@ -65,8 +65,16 @@ app.controller('ArticleController', function ($scope, $routeParams, $sce, OrgFac
         }
     };
 
-    $scope.getCurrentUrl = function () {
-        return encodeURIComponent('http://www/newzrank.com/' + window.location.hash);
+    $scope.getCurrentUrl = function (encode) {
+        var url = 'http://www.newzrank.com/' + window.location.hash,
+            result;
+        if (encode) {
+            result = encodeURIComponent(url);
+        } else {
+            result = url;
+        }
+        console.log(result);
+        return result;
     };
 
     $scope.openSocial = function (url) {

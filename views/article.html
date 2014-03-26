@@ -26,27 +26,27 @@
         <div class="action">
             <h2>Share Article</h2>
             <div class="networks" ng-click="toggleSocial($event)">
-                <a title="Google+" ng-if="isIos()" href="https://plus.google.com/share?url={{getCurrentUrl()}}" target="_blank">
+                <a title="Google+" ng-if="isIos()" href="https://plus.google.com/share?url={{getCurrentUrl(false)}}" target="_blank">
                     <div class="network google"></div>
                 </a>
 
-                <a title="Google+" ng-if="!isIos()" ng-click="openSocial('https://plus.google.com/share?url='+getCurrentUrl()+'&embed=true')">
+                <a title="Google+" ng-if="!isIos()" ng-click="openSocial('https://plus.google.com/share?url='+getCurrentUrl(false))">
                     <div class="network google"></div>
                 </a>
 
-                <a title="Facebook" ng-if="isIos()" href="https://www.facebook.com/sharer/sharer.php?s=100&p[url]={{getCurrentUrl()}}" target="_blank">
+                <a title="Facebook" ng-if="isIos()" href="https://www.facebook.com/sharer/sharer.php?s=100&p[summary]=I just ranked this article on newzrank.com&p[title]=I just ranked this article on newzrank.com&p[url]={{getCurrentUrl(true)}}" target="_blank">
                     <div class="network facebook"></div>
                 </a>
 
-                <a title="Facebook" ng-if="!isIos()" ng-click="openSocial('https://www.facebook.com/sharer/sharer.php?s=100&p[summary]=I just ranked this article on newzrank.com&p[title]=I just ranked this article on newzrank.com&p[url]='+getCurrentUrl())">
+                <a title="Facebook" ng-if="!isIos()" ng-click="openSocial('https://www.facebook.com/sharer/sharer.php?s=100&p[summary]=I just ranked this article on newzrank.com&p[title]=I just ranked this article on newzrank.com&p[url]='+getCurrentUrl(true))">
                     <div class="network facebook"></div>
                 </a>
 
-                <a title="Twitter" ng-if="isIos()" href="https://twitter.com/intent/tweet?url={{getCurrentUrl()}}&text=I just ranked an article at newzrank.com. Read the article here: {{getCurrentUrl()}}" target="_blank">
+                <a title="Twitter" ng-if="isIos()" href="https://twitter.com/intent/tweet?text=I just ranked an article at newzrank.com. Read the article here: {{getCurrentUrl(true)}}" target="_blank">
                     <div class="network twitter"></div>
                 </a>
 
-                <a title="Twitter" ng-if="!isIos()" ng-click="openSocial('https://twitter.com/intent/tweet?url='+getCurrentUrl()+'&text=I just ranked an article at newzrank.com. Read the article here: '+getCurrentUrl())">
+                <a title="Twitter" ng-if="!isIos()" ng-click="openSocial('https://twitter.com/intent/tweet?text=I just ranked an article at newzrank.com. Read the article here: '+getCurrentUrl(true))">
                     <div class="network twitter"></div>
                 </a>
             </div>

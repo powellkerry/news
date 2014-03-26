@@ -40,7 +40,10 @@ app.controller('ArticleController', function ($scope, $routeParams, $sce, OrgFac
             $scope.article.mediaGroups = "";
         }
         ArticleFactory.submitFeedback($scope.feedback, $scope.article.article_id, $scope.org_id, function () {
-            window.location = '#!/org';
+            setTimeout(function() {
+                $('button.menu').trigger('click');
+                $('.modal').show();
+            }, 500);
         });
     };
 
@@ -52,5 +55,26 @@ app.controller('ArticleController', function ($scope, $routeParams, $sce, OrgFac
             $($event.target).addClass('expanded');
             $('form.dropdown').addClass('visible');
         }
+    };
+
+    $scope.mbActionClick = function (key) {
+        if (key === 'back') {
+            window.location = '#/org';
+        } else {
+            $('.modal').hide();
+        }
+    };
+
+    $scope.getCurrentUrl = function () {
+        return encodeURIComponent('http://www/newzrank.com/' + window.location.hash);
+    };
+
+    $scope.openSocial = function (url) {
+        console.log(url);
+        window.open(url, '_blank', 'modal=yes');
+    };
+
+    $scope.isIos = function () {
+        return MobileFactory.isIos();
     };
 });

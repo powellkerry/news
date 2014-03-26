@@ -1,11 +1,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://www.newzrank.com/#!/home/rank</loc>
+        <loc>http://www.newzrank.com/#/home/rank</loc>
         <changefreq>always</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>http://www.newzrank.com/#!/home/org</loc>
+        <loc>http://www.newzrank.com/#/home/org</loc>
         <changefreq>always</changefreq>
         <priority>1.0</priority>
     </url>
@@ -15,12 +15,12 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>http://www.newzrank.com/#!/org</loc>
+        <loc>http://www.newzrank.com/#/org</loc>
         <changefreq>always</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>http://www.newzrank.com/#!/article</loc>
+        <loc>http://www.newzrank.com/#/article</loc>
         <changefreq>always</changefreq>
         <priority>1.0</priority>
     </url>

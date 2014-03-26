@@ -4,22 +4,22 @@ app.factory('BreadcrumbFactory', function() {
     var history = {
         home: {
             active: true,
-            url: '/#!/',
-            origUrl: '/#!/',
+            url: '/#/',
+            origUrl: '/#/',
             title: 'Home',
             order: 0
         },
         org: {
             active: false,
-            url: '/#!/feed',
-            origUrl: '/#!/feed',
+            url: '/#/feed',
+            origUrl: '/#/feed',
             title: 'RSS Feed',
             order: 1
         },
         article: {
             active: false,
-            url: '/#!/article',
-            origUrl: '/#!/article',
+            url: '/#/article',
+            origUrl: '/#/article',
             title: 'Article',
             order: 2
         }

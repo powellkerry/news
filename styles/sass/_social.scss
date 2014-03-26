@@ -1,0 +1,28 @@
+.networks {
+  padding-right: .5rem;
+  float: right;
+  display: inline-block;
+  height: 1rem;
+
+  a {
+    cursor: pointer;
+
+    .network {
+      display: inline-block;
+      margin: 0.2rem 0;
+      height: 2rem;
+      width: 1.7rem;
+      background: url('/styles/resources/social.png') no-repeat;
+
+      &.google {
+        background-position: 2px -63px;
+      }
+      &.facebook {
+        background-position: 0 -1px;
+      }
+      &.twitter {
+        background-position: 0 -30px;
+      }
+    }
+  }
+}

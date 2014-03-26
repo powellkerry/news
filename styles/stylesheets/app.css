@@ -51,18 +51,18 @@ html body header .nav .breadcrumbs .breadcrumb:not(:last-child):after {
   font-size: 1rem;
   color: white;
 }
-/* line 27, ../sass/_navigation.scss */
+/* line 1, ../sass/_social.scss */
 html body header .nav .networks {
   padding-right: .5rem;
   float: right;
   display: inline-block;
   height: 1rem;
 }
-/* line 33, ../sass/_navigation.scss */
+/* line 7, ../sass/_social.scss */
 html body header .nav .networks a {
   cursor: pointer;
 }
-/* line 36, ../sass/_navigation.scss */
+/* line 10, ../sass/_social.scss */
 html body header .nav .networks a .network {
   display: inline-block;
   margin: 0.2rem 0;
@@ -70,15 +70,15 @@ html body header .nav .networks a .network {
   width: 1.7rem;
   background: url("/styles/resources/social.png") no-repeat;
 }
-/* line 43, ../sass/_navigation.scss */
+/* line 17, ../sass/_social.scss */
 html body header .nav .networks a .network.google {
   background-position: 2px -63px;
 }
-/* line 46, ../sass/_navigation.scss */
+/* line 20, ../sass/_social.scss */
 html body header .nav .networks a .network.facebook {
   background-position: 0 -1px;
 }
-/* line 49, ../sass/_navigation.scss */
+/* line 23, ../sass/_social.scss */
 html body header .nav .networks a .network.twitter {
   background-position: 0 -30px;
 }
@@ -163,7 +163,7 @@ html body div.ng-scope header.sub.rank {
 @media screen and (max-width: 500px) {
   /* line 13, ../sass/_sub-header.scss */
   html body div.ng-scope header.sub.rank {
-    bottom: 0;
+    bottom: 35px;
     right: 0;
     top: inherit;
     height: auto;
@@ -634,7 +634,100 @@ html body div.ng-scope section a:not(.article) img, html body div.ng-scope secti
   max-width: 10rem;
   vertical-align: middle;
 }
-/* line 76, ../sass/app.scss */
+/* line 1, ../sass/_article.scss */
+html body div.ng-scope .modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(155, 155, 155, 0.7);
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+}
+/* line 11, ../sass/_article.scss */
+html body div.ng-scope .modal .message-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #3c3c3c;
+  border: 2px solid #fec71c;
+  color: white;
+  width: 30rem;
+  height: 10rem;
+  padding: 1rem;
+  margin: 0px auto;
+  margin-top: 8%;
+}
+/* line 26, ../sass/_article.scss */
+html body div.ng-scope .modal .message-box .action {
+  display: inline-block;
+  width: 48%;
+  height: 8rem;
+  padding-top: 2rem;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+/* line 1, ../sass/_social.scss */
+html body div.ng-scope .modal .message-box .action .networks {
+  padding-right: .5rem;
+  float: right;
+  display: inline-block;
+  height: 1rem;
+}
+/* line 7, ../sass/_social.scss */
+html body div.ng-scope .modal .message-box .action .networks a {
+  cursor: pointer;
+}
+/* line 10, ../sass/_social.scss */
+html body div.ng-scope .modal .message-box .action .networks a .network {
+  display: inline-block;
+  margin: 0.2rem 0;
+  height: 2rem;
+  width: 1.7rem;
+  background: url("/styles/resources/social.png") no-repeat;
+}
+/* line 17, ../sass/_social.scss */
+html body div.ng-scope .modal .message-box .action .networks a .network.google {
+  background-position: 2px -63px;
+}
+/* line 20, ../sass/_social.scss */
+html body div.ng-scope .modal .message-box .action .networks a .network.facebook {
+  background-position: 0 -1px;
+}
+/* line 23, ../sass/_social.scss */
+html body div.ng-scope .modal .message-box .action .networks a .network.twitter {
+  background-position: 0 -30px;
+}
+/* line 35, ../sass/_article.scss */
+html body div.ng-scope .modal .message-box .action .networks {
+  float: none;
+}
+/* line 39, ../sass/_article.scss */
+html body div.ng-scope .modal .message-box .action:nth-child(2) {
+  border-right: 1px solid;
+}
+/* line 42, ../sass/_article.scss */
+html body div.ng-scope .modal .message-box .action:nth-child(3) {
+  text-align: center;
+}
+/* line 46, ../sass/_article.scss */
+html body div.ng-scope .modal .message-box .action .social {
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 51, ../sass/_article.scss */
+html body div.ng-scope .modal .message-box .action button {
+  background: #fec71c;
+  border: none;
+  outline: none;
+  padding: .5rem;
+  width: 10rem;
+  cursor: pointer;
+}
+/* line 78, ../sass/app.scss */
 html body footer {
   position: fixed;
   bottom: 0;
@@ -645,7 +738,7 @@ html body footer {
   padding: .5rem;
   border-top: 2px solid #888888;
 }
-/* line 86, ../sass/app.scss */
+/* line 88, ../sass/app.scss */
 html body footer a {
   color: white;
 }

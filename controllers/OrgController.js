@@ -145,12 +145,12 @@ app.controller('OrgController', function ($scope, $routeParams, $location, OrgFa
 
     $scope.setCurrentArticle = function (article) {
         ArticleFactory.setCurrentArticle(article);
-        window.location = '/#!/article/' + article.article_id;
+        window.location = '/#/article/' + article.article_id;
     };
 
     $scope.setCurrentOrg = function (org) {
         OrgFactory.setCurrentOrg(org);
-        window.location = '#!/org';
+        window.location = '#/org';
     };
 
     $scope.getRank = function (article) {

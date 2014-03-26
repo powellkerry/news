@@ -1,9 +1,6 @@
 var app = angular.module('topnews', ['ngRoute', 'ngTouch']);
 
 app.config(function ($routeProvider, $locationProvider) {
-    $locationProvider.
-        hashPrefix('!');
-
     $routeProvider.
         when('/', {
             templateUrl: '/views/orgs.html',

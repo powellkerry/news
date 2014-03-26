@@ -1,0 +1,61 @@
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(155, 155, 155, 0.7);
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+
+  .message-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $black;
+    border: 2px solid $yellow;
+    color: $white;
+    width: 30rem;
+    height: 10rem;
+    padding: 1rem;
+    margin: 0px auto;
+    margin-top: 8%;
+
+    .action {
+      display: inline-block;
+      width: 48%;
+      height: 8rem;
+      padding-top: 2rem;
+      box-sizing: border-box;
+      vertical-align: top;
+
+      @import "social";
+      .networks {
+        float: none;
+      }
+
+      &:nth-child(2) {
+        border-right: 1px solid;
+      }
+      &:nth-child(3) {
+        text-align: center;
+      }
+
+      .social {
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      button {
+        background: $yellow;
+        border: none;
+        outline: none;
+        padding: .5rem;
+        width: 10rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

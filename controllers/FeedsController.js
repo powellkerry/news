@@ -115,7 +115,7 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
         ArticleFactory.submitArticle(article, $scope.org.org_id, feed.feed_id, function (data) {
             article.article_id = data[0].article_id;
             ArticleFactory.setCurrentArticle(article);
-            $scope.redirect('#!/article/' + data[0].article_id);
+            $scope.redirect('#/article/' + data[0].article_id);
         });
     };
 

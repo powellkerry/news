@@ -67,7 +67,7 @@ html body header .nav .networks a .network {
   display: inline-block;
   margin: 0.2rem 0;
   height: 2rem;
-  width: 1.7rem;
+  width: 1.6rem;
   background: url("/styles/resources/social.png") no-repeat;
 }
 /* line 17, ../sass/_social.scss */
@@ -673,7 +673,17 @@ html body div.ng-scope .modal .message-box {
   margin: 0px auto;
   margin-top: 8%;
 }
-/* line 26, ../sass/_article.scss */
+@media screen and (max-width: 500px) {
+  /* line 11, ../sass/_article.scss */
+  html body div.ng-scope .modal .message-box {
+    height: 20rem;
+    width: 15rem;
+    margin-top: 40%;
+    padding: 2rem;
+    text-align: center;
+  }
+}
+/* line 34, ../sass/_article.scss */
 html body div.ng-scope .modal .message-box .action {
   display: inline-block;
   width: 48%;
@@ -698,7 +708,7 @@ html body div.ng-scope .modal .message-box .action .networks a .network {
   display: inline-block;
   margin: 0.2rem 0;
   height: 2rem;
-  width: 1.7rem;
+  width: 1.6rem;
   background: url("/styles/resources/social.png") no-repeat;
 }
 /* line 17, ../sass/_social.scss */
@@ -713,24 +723,24 @@ html body div.ng-scope .modal .message-box .action .networks a .network.facebook
 html body div.ng-scope .modal .message-box .action .networks a .network.twitter {
   background-position: 0 -30px;
 }
-/* line 35, ../sass/_article.scss */
+/* line 45, ../sass/_article.scss */
 html body div.ng-scope .modal .message-box .action .networks {
   float: none;
 }
-/* line 39, ../sass/_article.scss */
+/* line 49, ../sass/_article.scss */
 html body div.ng-scope .modal .message-box .action:nth-child(2) {
   border-right: 1px solid;
 }
-/* line 42, ../sass/_article.scss */
+/* line 52, ../sass/_article.scss */
 html body div.ng-scope .modal .message-box .action:nth-child(3) {
   text-align: center;
 }
-/* line 46, ../sass/_article.scss */
+/* line 56, ../sass/_article.scss */
 html body div.ng-scope .modal .message-box .action .social {
   display: inline-block;
   vertical-align: top;
 }
-/* line 51, ../sass/_article.scss */
+/* line 61, ../sass/_article.scss */
 html body div.ng-scope .modal .message-box .action button {
   background: #fec71c;
   border: none;
@@ -738,6 +748,18 @@ html body div.ng-scope .modal .message-box .action button {
   padding: .5rem;
   width: 10rem;
   cursor: pointer;
+}
+@media screen and (max-width: 500px) {
+  /* line 34, ../sass/_article.scss */
+  html body div.ng-scope .modal .message-box .action {
+    display: block;
+    width: auto;
+  }
+  /* line 74, ../sass/_article.scss */
+  html body div.ng-scope .modal .message-box .action:nth-child(2) {
+    border-right: none;
+    border-bottom: 1px solid;
+  }
 }
 /* line 78, ../sass/app.scss */
 html body footer {

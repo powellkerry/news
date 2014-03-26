@@ -59,7 +59,9 @@ app.controller('FeedsController', function ($scope, $routeParams, OrgFactory, Fe
             feed.articles = FeedsFactory.loadFeeds(feed.feed_url, function (data) {
                 feed.articles = data;
                 angular.forEach(feed.articles, function (article) {
-                    article.publishedDate = new Date(article.publishedDate);
+                    if (article.publishedDate) {
+                        article.publishedDate = new Date(article.publishedDate);
+                    }
                     article.fullTitle = article.title;
                     if (article.title.length > 40) {
                         article.title = article.title.substr(0, 40) + '...';

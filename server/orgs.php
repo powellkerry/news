@@ -7,7 +7,7 @@ class orgs {
     function read() {
         $db = new db();
         $connection = $db->connect();
-        $stmt = $connection->prepare("SELECT * FROM news.news_orgs ORDER BY org_name");
+        $stmt = $connection->prepare("SELECT * FROM news.news_orgs WHERE active = true ORDER BY org_name ");
         $stmt->execute();
         $db->sendResults($stmt);
     }

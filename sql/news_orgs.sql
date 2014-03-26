@@ -1,6 +1,7 @@
 CREATE TABLE news_orgs (
   org_id serial primary key,
-  org_name text
+  org_name text,
+  active boolean default false
 );
 
 INSERT INTO news_orgs (org_name) VALUES ('Fox News');

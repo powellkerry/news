@@ -297,21 +297,21 @@ html body div.ng-scope header.sub.rank form.dropdown {
     border-right: none;
   }
 }
-/* line 153, ../sass/_sub-header.scss */
+/* line 151, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.rank form.dropdown .field {
   display: inline-block;
   margin-right: 1rem;
 }
-/* line 157, ../sass/_sub-header.scss */
+/* line 155, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.rank form.dropdown .field input[type=range] {
   width: 9rem;
 }
-/* line 161, ../sass/_sub-header.scss */
+/* line 159, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.rank form.dropdown .field label {
   display: block;
   color: white;
 }
-/* line 166, ../sass/_sub-header.scss */
+/* line 164, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.rank form.dropdown input[type=submit] {
   vertical-align: top;
   margin-top: .5rem;
@@ -321,21 +321,32 @@ html body div.ng-scope header.sub.rank form.dropdown input[type=submit] {
   color: #3c3c3c;
   padding: .5rem;
 }
-/* line 177, ../sass/_sub-header.scss */
+/* line 175, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.toolbar {
   text-align: center;
   padding: .5rem;
   box-sizing: border-box;
+  background: #3c3c3c;
 }
-/* line 182, ../sass/_sub-header.scss */
+/* line 181, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.toolbar h2 {
   color: #3c3c3c;
 }
-/* line 186, ../sass/_sub-header.scss */
+/* line 184, ../sass/_sub-header.scss */
+html body div.ng-scope header.sub.toolbar h3 {
+  width: 100%;
+  margin: 0;
+  padding: .5rem;
+  background: #fec71c;
+  color: #3c3c3c;
+  box-sizing: border-box;
+  margin-bottom: .5rem;
+}
+/* line 194, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.toolbar span.toggle button {
   border: none;
   outline: none;
-  background: #3c3c3c;
+  background: #888888;
   color: white;
   padding: .3rem;
   width: 8rem;
@@ -343,9 +354,10 @@ html body div.ng-scope header.sub.toolbar span.toggle button {
   text-transform: uppercase;
   cursor: pointer;
 }
-/* line 197, ../sass/_sub-header.scss */
+/* line 205, ../sass/_sub-header.scss */
 html body div.ng-scope header.sub.toolbar span.toggle button.selected {
-  background: #888888;
+  background: #fec71c;
+  color: #3c3c3c;
 }
 /* line 50, ../sass/app.scss */
 html body div.ng-scope section, html body div.ng-scope section section {

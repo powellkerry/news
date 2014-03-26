@@ -148,8 +148,6 @@ header.sub {
         }
       }
 
-
-
       .field {
         display: inline-block;
         margin-right: 1rem;
@@ -178,15 +176,25 @@ header.sub {
     text-align: center;
     padding: .5rem;
     box-sizing: border-box;
+    background: $black;
 
     h2 {
       color: $black;
+    }
+    h3 {
+      width: 100%;
+      margin: 0;
+      padding: .5rem;
+      background: $yellow;
+      color: $black;
+      box-sizing: border-box;
+      margin-bottom: .5rem;
     }
     span.toggle {
       button {
         border: none;
         outline: none;
-        background: $black;
+        background: $gray;
         color: $white;
         padding: .3rem;
         width: 8rem;
@@ -195,7 +203,8 @@ header.sub {
         cursor: pointer;
 
         &.selected {
-          background: $gray;
+          background: $yellow;
+          color: $black;
         }
       }
     }

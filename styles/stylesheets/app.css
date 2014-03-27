@@ -1,4 +1,4 @@
-/* line 8, ../sass/app.scss */
+/* line 10, ../sass/app.scss */
 html {
   width: 100%;
   height: 100%;
@@ -7,14 +7,14 @@ html {
   font-family: 'Alegreya Sans', sans-serif;
   background: white;
 }
-/* line 16, ../sass/app.scss */
+/* line 18, ../sass/app.scss */
 html a, html h1, html h2, html img {
   border: none;
   text-decoration: none;
   padding: 0;
   margin: 0;
 }
-/* line 23, ../sass/app.scss */
+/* line 25, ../sass/app.scss */
 html body {
   width: 100%;
   height: 100%;
@@ -110,29 +110,32 @@ html body header .container h1 .yellow {
 html body header .container h1 .gray {
   color: #acacac;
 }
-/* line 30, ../sass/app.scss */
-html body div.ng-scope {
+/* line 32, ../sass/app.scss */
+html body div.ng-scope:nth-child(3) {
   margin-bottom: 3rem;
+  min-height: 35.5rem;
 }
-/* line 33, ../sass/app.scss */
-html body div.ng-scope .page-container {
+/* line 36, ../sass/app.scss */
+html body div.ng-scope:nth-child(3) .page-container {
   width: 100%;
   max-width: 57rem;
   margin: 0px auto;
 }
-/* line 39, ../sass/app.scss */
-html body div.ng-scope iframe {
+/* line 42, ../sass/app.scss */
+html body div.ng-scope:nth-child(3) iframe {
   width: 100%;
   height: 99%;
   border: none;
   outline: none;
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
 }
 /* line 1, ../sass/_sub-header.scss */
-html body div.ng-scope header.sub {
+html body div.ng-scope:nth-child(3) header.sub {
   background: #3c3c3c;
   color: #fec71c;
   margin: 0px auto;
@@ -140,12 +143,12 @@ html body div.ng-scope header.sub {
   margin: .5rem 0;
 }
 /* line 8, ../sass/_sub-header.scss */
-html body div.ng-scope header.sub h1 {
+html body div.ng-scope:nth-child(3) header.sub h1 {
   margin: 0 1rem;
   font-size: 2.5rem;
 }
 /* line 13, ../sass/_sub-header.scss */
-html body div.ng-scope header.sub.rank {
+html body div.ng-scope:nth-child(3) header.sub.rank {
   position: absolute;
   background: none;
   border-bottom: none;
@@ -153,7 +156,7 @@ html body div.ng-scope header.sub.rank {
 }
 @media screen and (min-width: 500px) {
   /* line 13, ../sass/_sub-header.scss */
-  html body div.ng-scope header.sub.rank {
+  html body div.ng-scope:nth-child(3) header.sub.rank {
     top: 1rem;
     right: 1rem;
     width: 9rem;
@@ -162,7 +165,7 @@ html body div.ng-scope header.sub.rank {
 }
 @media screen and (max-width: 500px) {
   /* line 13, ../sass/_sub-header.scss */
-  html body div.ng-scope header.sub.rank {
+  html body div.ng-scope:nth-child(3) header.sub.rank {
     bottom: 35px;
     right: 0;
     top: inherit;
@@ -173,7 +176,7 @@ html body div.ng-scope header.sub.rank {
   }
 }
 /* line 36, ../sass/_sub-header.scss */
-html body div.ng-scope header.sub.rank button {
+html body div.ng-scope:nth-child(3) header.sub.rank button {
   border: none;
   outline: none;
   background: #fec71c;
@@ -186,27 +189,27 @@ html body div.ng-scope header.sub.rank button {
 }
 @media screen and (max-width: 500px) {
   /* line 36, ../sass/_sub-header.scss */
-  html body div.ng-scope header.sub.rank button {
+  html body div.ng-scope:nth-child(3) header.sub.rank button {
     margin: 0;
     border: 5px solid #3c3c3c;
     border-right: none;
     border-bottom: none;
   }
   /* line 53, ../sass/_sub-header.scss */
-  html body div.ng-scope header.sub.rank button:before {
+  html body div.ng-scope:nth-child(3) header.sub.rank button:before {
     content: '\2713';
     font-size: 1.5rem;
     padding: 0 .3rem;
   }
 }
 /* line 60, ../sass/_sub-header.scss */
-html body div.ng-scope header.sub.rank button.menu.expanded {
+html body div.ng-scope:nth-child(3) header.sub.rank button.menu.expanded {
   background: #888888;
   color: #fec71c;
 }
 @media screen and (max-width: 500px) {
   /* line 60, ../sass/_sub-header.scss */
-  html body div.ng-scope header.sub.rank button.menu.expanded {
+  html body div.ng-scope:nth-child(3) header.sub.rank button.menu.expanded {
     border: 5px solid #fec71c;
     border-right: none;
     border-bottom: none;
@@ -214,11 +217,11 @@ html body div.ng-scope header.sub.rank button.menu.expanded {
 }
 @media screen and (min-width: 500px) {
   /* line 71, ../sass/_sub-header.scss */
-  html body div.ng-scope header.sub.rank button:before {
+  html body div.ng-scope:nth-child(3) header.sub.rank button:before {
     content: 'Rate It';
   }
   /* line 75, ../sass/_sub-header.scss */
-  html body div.ng-scope header.sub.rank button.menu:after {
+  html body div.ng-scope:nth-child(3) header.sub.rank button.menu:after {
     content: '\2799';
     font-weight: bold;
     margin: 0 0 0 1rem;
@@ -226,7 +229,7 @@ html body div.ng-scope header.sub.rank button.menu.expanded {
     vertical-align: middle;
   }
   /* line 82, ../sass/_sub-header.scss */
-  html body div.ng-scope header.sub.rank button.menu.expanded:after {
+  html body div.ng-scope:nth-child(3) header.sub.rank button.menu.expanded:after {
     -webkit-transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
     transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
     content: '\2799';
@@ -236,7 +239,7 @@ html body div.ng-scope header.sub.rank button.menu.expanded {
     display: inline-block;
   }
   /* line 91, ../sass/_sub-header.scss */
-  html body div.ng-scope header.sub.rank button.menu.collapsed:after {
+  html body div.ng-scope:nth-child(3) header.sub.rank button.menu.collapsed:after {
     content: '\2799';
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
@@ -250,7 +253,7 @@ html body div.ng-scope header.sub.rank button.menu.expanded {
   }
 }
 /* line 107, ../sass/_sub-header.scss */
-html body div.ng-scope header.sub.rank form.dropdown {
+html body div.ng-scope:nth-child(3) header.sub.rank form.dropdown {
   height: 0;
   width: 0;
   position: absolute;
@@ -265,11 +268,11 @@ html body div.ng-scope header.sub.rank form.dropdown {
 }
 @media screen and (min-width: 500px) {
   /* line 107, ../sass/_sub-header.scss */
-  html body div.ng-scope header.sub.rank form.dropdown {
+  html body div.ng-scope:nth-child(3) header.sub.rank form.dropdown {
     top: -2.5rem;
   }
   /* line 123, ../sass/_sub-header.scss */
-  html body div.ng-scope header.sub.rank form.dropdown.visible {
+  html body div.ng-scope:nth-child(3) header.sub.rank form.dropdown.visible {
     -webkit-transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
     transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
     width: 10rem;
@@ -281,12 +284,12 @@ html body div.ng-scope header.sub.rank form.dropdown {
 }
 @media screen and (max-width: 500px) {
   /* line 107, ../sass/_sub-header.scss */
-  html body div.ng-scope header.sub.rank form.dropdown {
+  html body div.ng-scope:nth-child(3) header.sub.rank form.dropdown {
     right: 0;
     top: 0;
   }
   /* line 139, ../sass/_sub-header.scss */
-  html body div.ng-scope header.sub.rank form.dropdown.visible {
+  html body div.ng-scope:nth-child(3) header.sub.rank form.dropdown.visible {
     -webkit-transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
     transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
     width: 10rem;
@@ -298,21 +301,21 @@ html body div.ng-scope header.sub.rank form.dropdown {
   }
 }
 /* line 151, ../sass/_sub-header.scss */
-html body div.ng-scope header.sub.rank form.dropdown .field {
+html body div.ng-scope:nth-child(3) header.sub.rank form.dropdown .field {
   display: inline-block;
   margin-right: 1rem;
 }
 /* line 155, ../sass/_sub-header.scss */
-html body div.ng-scope header.sub.rank form.dropdown .field input[type=range] {
+html body div.ng-scope:nth-child(3) header.sub.rank form.dropdown .field input[type=range] {
   width: 9rem;
 }
 /* line 159, ../sass/_sub-header.scss */
-html body div.ng-scope header.sub.rank form.dropdown .field label {
+html body div.ng-scope:nth-child(3) header.sub.rank form.dropdown .field label {
   display: block;
   color: white;
 }
 /* line 164, ../sass/_sub-header.scss */
-html body div.ng-scope header.sub.rank form.dropdown input[type=submit] {
+html body div.ng-scope:nth-child(3) header.sub.rank form.dropdown input[type=submit] {
   vertical-align: top;
   margin-top: .5rem;
   border: none;
@@ -322,28 +325,32 @@ html body div.ng-scope header.sub.rank form.dropdown input[type=submit] {
   padding: .5rem;
 }
 /* line 175, ../sass/_sub-header.scss */
-html body div.ng-scope header.sub.toolbar {
+html body div.ng-scope:nth-child(3) header.sub.toolbar {
   text-align: center;
   padding: .5rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   background: #3c3c3c;
 }
 /* line 181, ../sass/_sub-header.scss */
-html body div.ng-scope header.sub.toolbar h2 {
+html body div.ng-scope:nth-child(3) header.sub.toolbar h2 {
   color: #3c3c3c;
 }
 /* line 184, ../sass/_sub-header.scss */
-html body div.ng-scope header.sub.toolbar h3 {
+html body div.ng-scope:nth-child(3) header.sub.toolbar h3 {
   width: 100%;
   margin: 0;
   padding: .5rem;
   background: #fec71c;
   color: #3c3c3c;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin-bottom: .5rem;
 }
 /* line 194, ../sass/_sub-header.scss */
-html body div.ng-scope header.sub.toolbar span.toggle button {
+html body div.ng-scope:nth-child(3) header.sub.toolbar span.toggle button {
   border: none;
   outline: none;
   background: #888888;
@@ -355,68 +362,69 @@ html body div.ng-scope header.sub.toolbar span.toggle button {
   cursor: pointer;
 }
 /* line 205, ../sass/_sub-header.scss */
-html body div.ng-scope header.sub.toolbar span.toggle button.selected {
+html body div.ng-scope:nth-child(3) header.sub.toolbar span.toggle button.selected {
   background: #fec71c;
   color: #3c3c3c;
 }
-/* line 51, ../sass/app.scss */
-html body div.ng-scope section, html body div.ng-scope section section {
+/* line 54, ../sass/app.scss */
+html body div.ng-scope:nth-child(3) section, html body div.ng-scope:nth-child(3) section section {
   margin: 0px auto;
   vertical-align: top;
 }
-/* line 55, ../sass/app.scss */
-html body div.ng-scope section.rank, html body div.ng-scope section section.rank {
+/* line 58, ../sass/app.scss */
+html body div.ng-scope:nth-child(3) section.rank, html body div.ng-scope:nth-child(3) section section.rank {
   width: 100%;
   margin: 0;
 }
-/* line 60, ../sass/app.scss */
-html body div.ng-scope section#orgs, html body div.ng-scope section section#orgs {
+/* line 63, ../sass/app.scss */
+html body div.ng-scope:nth-child(3) section#orgs, html body div.ng-scope:nth-child(3) section section#orgs {
   text-align: center;
   width: 100%;
 }
-/* line 64, ../sass/app.scss */
-html body div.ng-scope section.toggle, html body div.ng-scope section section.toggle {
+/* line 67, ../sass/app.scss */
+html body div.ng-scope:nth-child(3) section.toggle, html body div.ng-scope:nth-child(3) section section.toggle {
   display: none;
 }
-/* line 67, ../sass/app.scss */
-html body div.ng-scope section.toggle:first-of-type, html body div.ng-scope section section.toggle:first-of-type {
+/* line 70, ../sass/app.scss */
+html body div.ng-scope:nth-child(3) section.toggle:first-of-type, html body div.ng-scope:nth-child(3) section section.toggle:first-of-type {
   display: inherit;
 }
 /* line 1, ../sass/_options.scss */
-html body div.ng-scope section .toolbar, html body div.ng-scope section section .toolbar {
+html body div.ng-scope:nth-child(3) section .toolbar, html body div.ng-scope:nth-child(3) section section .toolbar {
   background: #3c3c3c;
   color: #fec71c;
   padding: .5rem;
   display: block;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  box-sizing: border-box;
   text-align: left;
   min-height: 3.5rem;
 }
-/* line 11, ../sass/_options.scss */
-html body div.ng-scope section .toolbar .buttons, html body div.ng-scope section section .toolbar .buttons {
+/* line 10, ../sass/_options.scss */
+html body div.ng-scope:nth-child(3) section .toolbar .buttons, html body div.ng-scope:nth-child(3) section section .toolbar .buttons {
   float: right;
 }
-/* line 14, ../sass/_options.scss */
-html body div.ng-scope section .toolbar .buttons .menu, html body div.ng-scope section section .toolbar .buttons .menu {
+/* line 13, ../sass/_options.scss */
+html body div.ng-scope:nth-child(3) section .toolbar .buttons .menu, html body div.ng-scope:nth-child(3) section section .toolbar .buttons .menu {
   background: none;
   outline: none;
   border: none;
   cursor: pointer;
   color: #FFF;
 }
-/* line 21, ../sass/_options.scss */
-html body div.ng-scope section .toolbar .buttons .menu.active, html body div.ng-scope section section .toolbar .buttons .menu.active {
+/* line 20, ../sass/_options.scss */
+html body div.ng-scope:nth-child(3) section .toolbar .buttons .menu.active, html body div.ng-scope:nth-child(3) section section .toolbar .buttons .menu.active {
   color: #fec71c;
 }
-/* line 25, ../sass/_options.scss */
-html body div.ng-scope section .toolbar .buttons .menu:before, html body div.ng-scope section section .toolbar .buttons .menu:before {
+/* line 24, ../sass/_options.scss */
+html body div.ng-scope:nth-child(3) section .toolbar .buttons .menu:before, html body div.ng-scope:nth-child(3) section section .toolbar .buttons .menu:before {
   display: inline-block;
   content: "\2261";
   font-size: 2rem;
 }
-/* line 33, ../sass/_options.scss */
-html body div.ng-scope section .toolbar .options, html body div.ng-scope section section .toolbar .options {
+/* line 32, ../sass/_options.scss */
+html body div.ng-scope:nth-child(3) section .toolbar .options, html body div.ng-scope:nth-child(3) section section .toolbar .options {
   position: absolute;
   background: #3c3c3c;
   padding: .5rem;
@@ -424,59 +432,59 @@ html body div.ng-scope section .toolbar .options, html body div.ng-scope section
   border: 3px solid #fec71c;
   margin-top: .5rem;
 }
-/* line 41, ../sass/_options.scss */
-html body div.ng-scope section .toolbar .options.hidden, html body div.ng-scope section section .toolbar .options.hidden {
+/* line 40, ../sass/_options.scss */
+html body div.ng-scope:nth-child(3) section .toolbar .options.hidden, html body div.ng-scope:nth-child(3) section section .toolbar .options.hidden {
   -webkit-transition: all cubic-bezier(0, 0, 1, 1) 0.3s;
   transition: all cubic-bezier(0, 0, 1, 1) 0.3s;
   opacity: 0;
   z-index: -1;
 }
-/* line 48, ../sass/_options.scss */
-html body div.ng-scope section .toolbar .options.visible, html body div.ng-scope section section .toolbar .options.visible {
+/* line 47, ../sass/_options.scss */
+html body div.ng-scope:nth-child(3) section .toolbar .options.visible, html body div.ng-scope:nth-child(3) section section .toolbar .options.visible {
   display: block;
   -webkit-transition: all cubic-bezier(0, 0, 1, 1) 0.3s;
   transition: all cubic-bezier(0, 0, 1, 1) 0.3s;
   opacity: 1;
   z-index: 1;
 }
-/* line 56, ../sass/_options.scss */
-html body div.ng-scope section .toolbar .options .field, html body div.ng-scope section section .toolbar .options .field {
+/* line 55, ../sass/_options.scss */
+html body div.ng-scope:nth-child(3) section .toolbar .options .field, html body div.ng-scope:nth-child(3) section section .toolbar .options .field {
   margin: 1rem;
 }
-/* line 58, ../sass/_options.scss */
-html body div.ng-scope section .toolbar .options .field label, html body div.ng-scope section section .toolbar .options .field label {
+/* line 57, ../sass/_options.scss */
+html body div.ng-scope:nth-child(3) section .toolbar .options .field label, html body div.ng-scope:nth-child(3) section section .toolbar .options .field label {
   font-weight: bold;
   font-size: 1.2rem;
   margin-right: .5rem;
   display: inline-block;
   vertical-align: top;
 }
-/* line 66, ../sass/_options.scss */
-html body div.ng-scope section .toolbar .options .field select, html body div.ng-scope section section .toolbar .options .field select {
+/* line 65, ../sass/_options.scss */
+html body div.ng-scope:nth-child(3) section .toolbar .options .field select, html body div.ng-scope:nth-child(3) section section .toolbar .options .field select {
   border: none;
   padding: .1rem;
   font-size: 1rem;
   width: 6rem;
 }
-/* line 73, ../sass/_options.scss */
-html body div.ng-scope section .toolbar .options .field input[type=search], html body div.ng-scope section section .toolbar .options .field input[type=search] {
+/* line 72, ../sass/_options.scss */
+html body div.ng-scope:nth-child(3) section .toolbar .options .field input[type=search], html body div.ng-scope:nth-child(3) section section .toolbar .options .field input[type=search] {
   width: 12rem;
 }
-/* line 77, ../sass/_options.scss */
-html body div.ng-scope section .toolbar .options .field .checkbox-group, html body div.ng-scope section section .toolbar .options .field .checkbox-group {
+/* line 76, ../sass/_options.scss */
+html body div.ng-scope:nth-child(3) section .toolbar .options .field .checkbox-group, html body div.ng-scope:nth-child(3) section section .toolbar .options .field .checkbox-group {
   display: inline-block;
   max-width: 12rem;
 }
-/* line 81, ../sass/_options.scss */
-html body div.ng-scope section .toolbar .options .field .checkbox-group label, html body div.ng-scope section section .toolbar .options .field .checkbox-group label {
+/* line 80, ../sass/_options.scss */
+html body div.ng-scope:nth-child(3) section .toolbar .options .field .checkbox-group label, html body div.ng-scope:nth-child(3) section section .toolbar .options .field .checkbox-group label {
   width: 10rem;
 }
-/* line 87, ../sass/_options.scss */
-html body div.ng-scope section .toolbar .field, html body div.ng-scope section section .toolbar .field {
+/* line 86, ../sass/_options.scss */
+html body div.ng-scope:nth-child(3) section .toolbar .field, html body div.ng-scope:nth-child(3) section section .toolbar .field {
   padding: .5rem;
 }
 /* line 3, ../sass/_feed.scss */
-html body div.ng-scope section.feed header, html body div.ng-scope section section.feed header, html body div.ng-scope section section.feed header, html body div.ng-scope section section section.feed header {
+html body div.ng-scope:nth-child(3) section.feed header, html body div.ng-scope:nth-child(3) section section.feed header, html body div.ng-scope:nth-child(3) section section.feed header, html body div.ng-scope:nth-child(3) section section section.feed header {
   padding: .5rem;
   background: #3c3c3c;
   color: #fec71c;
@@ -486,12 +494,12 @@ html body div.ng-scope section.feed header, html body div.ng-scope section secti
   border-top: 1px solid #fec71c;
 }
 /* line 12, ../sass/_feed.scss */
-html body div.ng-scope section.feed header.expandable.expanded, html body div.ng-scope section section.feed header.expandable.expanded, html body div.ng-scope section section.feed header.expandable.expanded, html body div.ng-scope section section section.feed header.expandable.expanded {
+html body div.ng-scope:nth-child(3) section.feed header.expandable.expanded, html body div.ng-scope:nth-child(3) section section.feed header.expandable.expanded, html body div.ng-scope:nth-child(3) section section.feed header.expandable.expanded, html body div.ng-scope:nth-child(3) section section section.feed header.expandable.expanded {
   background: #fec71c;
   color: #3c3c3c;
 }
 /* line 16, ../sass/_feed.scss */
-html body div.ng-scope section.feed header.expandable.expanded:before, html body div.ng-scope section section.feed header.expandable.expanded:before, html body div.ng-scope section section.feed header.expandable.expanded:before, html body div.ng-scope section section section.feed header.expandable.expanded:before {
+html body div.ng-scope:nth-child(3) section.feed header.expandable.expanded:before, html body div.ng-scope:nth-child(3) section section.feed header.expandable.expanded:before, html body div.ng-scope:nth-child(3) section section.feed header.expandable.expanded:before, html body div.ng-scope:nth-child(3) section section section.feed header.expandable.expanded:before {
   width: 0;
   height: 0;
   display: inline-block;
@@ -502,25 +510,27 @@ html body div.ng-scope section.feed header.expandable.expanded:before, html body
   border-bottom: 1.2rem solid transparent;
   border-right: 2rem solid #888888;
   border-left: .5rem solid transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   z-index: -1;
   -webkit-margin-before: .1rem;
   float: left;
 }
 /* line 32, ../sass/_feed.scss */
-html body div.ng-scope section.feed header.expandable.expanded h1, html body div.ng-scope section section.feed header.expandable.expanded h1, html body div.ng-scope section section.feed header.expandable.expanded h1, html body div.ng-scope section section section.feed header.expandable.expanded h1 {
+html body div.ng-scope:nth-child(3) section.feed header.expandable.expanded h1, html body div.ng-scope:nth-child(3) section section.feed header.expandable.expanded h1, html body div.ng-scope:nth-child(3) section section.feed header.expandable.expanded h1, html body div.ng-scope:nth-child(3) section section section.feed header.expandable.expanded h1 {
   position: relative;
   left: -2.5rem;
 }
 /* line 38, ../sass/_feed.scss */
-html body div.ng-scope section.feed header.expandable h1:before, html body div.ng-scope section section.feed header.expandable h1:before, html body div.ng-scope section section.feed header.expandable h1:before, html body div.ng-scope section section section.feed header.expandable h1:before {
+html body div.ng-scope:nth-child(3) section.feed header.expandable h1:before, html body div.ng-scope:nth-child(3) section section.feed header.expandable h1:before, html body div.ng-scope:nth-child(3) section section.feed header.expandable h1:before, html body div.ng-scope:nth-child(3) section section section.feed header.expandable h1:before {
   content: '\2799';
   font-weight: bold;
   margin: 0 1rem;
   font-size: 1.5rem;
 }
 /* line 44, ../sass/_feed.scss */
-html body div.ng-scope section.feed header.expandable.expanded h1:before, html body div.ng-scope section section.feed header.expandable.expanded h1:before, html body div.ng-scope section section.feed header.expandable.expanded h1:before, html body div.ng-scope section section section.feed header.expandable.expanded h1:before {
+html body div.ng-scope:nth-child(3) section.feed header.expandable.expanded h1:before, html body div.ng-scope:nth-child(3) section section.feed header.expandable.expanded h1:before, html body div.ng-scope:nth-child(3) section section.feed header.expandable.expanded h1:before, html body div.ng-scope:nth-child(3) section section section.feed header.expandable.expanded h1:before {
   -webkit-transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
   transition: all cubic-bezier(0, 0, 1, 1) 0.1s;
   content: '\2799';
@@ -530,7 +540,7 @@ html body div.ng-scope section.feed header.expandable.expanded h1:before, html b
   display: inline-block;
 }
 /* line 53, ../sass/_feed.scss */
-html body div.ng-scope section.feed header.expandable.collapsed h1:before, html body div.ng-scope section section.feed header.expandable.collapsed h1:before, html body div.ng-scope section section.feed header.expandable.collapsed h1:before, html body div.ng-scope section section section.feed header.expandable.collapsed h1:before {
+html body div.ng-scope:nth-child(3) section.feed header.expandable.collapsed h1:before, html body div.ng-scope:nth-child(3) section section.feed header.expandable.collapsed h1:before, html body div.ng-scope:nth-child(3) section section.feed header.expandable.collapsed h1:before, html body div.ng-scope:nth-child(3) section section section.feed header.expandable.collapsed h1:before {
   content: '\2799';
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -543,7 +553,7 @@ html body div.ng-scope section.feed header.expandable.collapsed h1:before, html 
   -moz-transform: rotate(0deg);
 }
 /* line 66, ../sass/_feed.scss */
-html body div.ng-scope section.feed header h1, html body div.ng-scope section section.feed header h1, html body div.ng-scope section section.feed header h1, html body div.ng-scope section section section.feed header h1 {
+html body div.ng-scope:nth-child(3) section.feed header h1, html body div.ng-scope:nth-child(3) section section.feed header h1, html body div.ng-scope:nth-child(3) section section.feed header h1, html body div.ng-scope:nth-child(3) section section section.feed header h1 {
   padding: 0;
   margin: 0;
   font-size: 1.5rem;
@@ -551,13 +561,13 @@ html body div.ng-scope section.feed header h1, html body div.ng-scope section se
   display: inline-block;
 }
 /* line 75, ../sass/_feed.scss */
-html body div.ng-scope section.feed .article-container, html body div.ng-scope section section.feed .article-container, html body div.ng-scope section section.feed .article-container, html body div.ng-scope section section section.feed .article-container {
+html body div.ng-scope:nth-child(3) section.feed .article-container, html body div.ng-scope:nth-child(3) section section.feed .article-container, html body div.ng-scope:nth-child(3) section section.feed .article-container, html body div.ng-scope:nth-child(3) section section section.feed .article-container {
   margin-left: 4rem;
   margin-right: 4rem;
   display: none;
 }
 /* line 80, ../sass/_feed.scss */
-html body div.ng-scope section.feed .article-container article, html body div.ng-scope section section.feed .article-container article, html body div.ng-scope section section.feed .article-container article, html body div.ng-scope section section section.feed .article-container article {
+html body div.ng-scope:nth-child(3) section.feed .article-container article, html body div.ng-scope:nth-child(3) section section.feed .article-container article, html body div.ng-scope:nth-child(3) section section.feed .article-container article, html body div.ng-scope:nth-child(3) section section section.feed .article-container article {
   background: #3c3c3c;
   color: white;
   margin-right: 2px;
@@ -572,7 +582,7 @@ html body div.ng-scope section.feed .article-container article, html body div.ng
   vertical-align: top;
 }
 /* line 94, ../sass/_feed.scss */
-html body div.ng-scope section.feed .article-container article .rank, html body div.ng-scope section section.feed .article-container article .rank, html body div.ng-scope section section.feed .article-container article .rank, html body div.ng-scope section section section.feed .article-container article .rank {
+html body div.ng-scope:nth-child(3) section.feed .article-container article .rank, html body div.ng-scope:nth-child(3) section section.feed .article-container article .rank, html body div.ng-scope:nth-child(3) section section.feed .article-container article .rank, html body div.ng-scope:nth-child(3) section section section.feed .article-container article .rank {
   float: right;
   font-size: 1.5rem;
   background: #888888;
@@ -586,31 +596,32 @@ html body div.ng-scope section.feed .article-container article .rank, html body 
   font-weight: bold;
   border-left: 1px solid #3c3c3c;
   border-bottom: 1px solid #3c3c3c;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-/* line 113, ../sass/_feed.scss */
-html body div.ng-scope section.feed .article-container h2, html body div.ng-scope section section.feed .article-container h2, html body div.ng-scope section section.feed .article-container h2, html body div.ng-scope section section section.feed .article-container h2 {
+/* line 112, ../sass/_feed.scss */
+html body div.ng-scope:nth-child(3) section.feed .article-container h2, html body div.ng-scope:nth-child(3) section section.feed .article-container h2, html body div.ng-scope:nth-child(3) section section.feed .article-container h2, html body div.ng-scope:nth-child(3) section section section.feed .article-container h2 {
   font-size: 1.2rem;
   color: #fec71c;
   max-width: 33rem;
   max-height: 3rem;
   overflow: hidden;
 }
-/* line 120, ../sass/_feed.scss */
-html body div.ng-scope section.feed .article-container .date, html body div.ng-scope section section.feed .article-container .date, html body div.ng-scope section section.feed .article-container .date, html body div.ng-scope section section section.feed .article-container .date {
+/* line 119, ../sass/_feed.scss */
+html body div.ng-scope:nth-child(3) section.feed .article-container .date, html body div.ng-scope:nth-child(3) section section.feed .article-container .date, html body div.ng-scope:nth-child(3) section section.feed .article-container .date, html body div.ng-scope:nth-child(3) section section section.feed .article-container .date {
   font-size: .9rem;
   margin-bottom: .5rem;
 }
-/* line 124, ../sass/_feed.scss */
-html body div.ng-scope section.feed .article-container img, html body div.ng-scope section section.feed .article-container img, html body div.ng-scope section section.feed .article-container img, html body div.ng-scope section section section.feed .article-container img {
+/* line 123, ../sass/_feed.scss */
+html body div.ng-scope:nth-child(3) section.feed .article-container img, html body div.ng-scope:nth-child(3) section section.feed .article-container img, html body div.ng-scope:nth-child(3) section section.feed .article-container img, html body div.ng-scope:nth-child(3) section section section.feed .article-container img {
   display: inline-block;
   max-width: 8rem;
   max-height: 5rem;
   border: 2px solid #888888;
 }
-/* line 131, ../sass/_feed.scss */
-html body div.ng-scope section.feed .article-container .snippet, html body div.ng-scope section section.feed .article-container .snippet, html body div.ng-scope section section.feed .article-container .snippet, html body div.ng-scope section section section.feed .article-container .snippet {
+/* line 130, ../sass/_feed.scss */
+html body div.ng-scope:nth-child(3) section.feed .article-container .snippet, html body div.ng-scope:nth-child(3) section section.feed .article-container .snippet, html body div.ng-scope:nth-child(3) section section.feed .article-container .snippet, html body div.ng-scope:nth-child(3) section section section.feed .article-container .snippet {
   display: inline-block;
   max-width: 25rem;
   vertical-align: top;
@@ -618,7 +629,7 @@ html body div.ng-scope section.feed .article-container .snippet, html body div.n
   overflow: hidden;
 }
 /* line 1, ../sass/_org.scss */
-html body div.ng-scope section a:not(.article), html body div.ng-scope section section a:not(.article) {
+html body div.ng-scope:nth-child(3) section a:not(.article), html body div.ng-scope:nth-child(3) section section a:not(.article) {
   height: 13rem;
   width: 13rem;
   display: inline-block;
@@ -628,26 +639,28 @@ html body div.ng-scope section a:not(.article), html body div.ng-scope section s
   text-align: center;
   padding: 1rem;
   margin: .5rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   cursor: pointer;
 }
 /* line 14, ../sass/_org.scss */
-html body div.ng-scope section a:not(.article):active, html body div.ng-scope section section a:not(.article):active {
+html body div.ng-scope:nth-child(3) section a:not(.article):active, html body div.ng-scope:nth-child(3) section section a:not(.article):active {
   background: #888888;
 }
 /* line 18, ../sass/_org.scss */
-html body div.ng-scope section a:not(.article) .helper, html body div.ng-scope section section a:not(.article) .helper {
+html body div.ng-scope:nth-child(3) section a:not(.article) .helper, html body div.ng-scope:nth-child(3) section section a:not(.article) .helper {
   height: 100%;
   vertical-align: middle;
   display: inline-block;
 }
 /* line 24, ../sass/_org.scss */
-html body div.ng-scope section a:not(.article) img, html body div.ng-scope section section a:not(.article) img {
+html body div.ng-scope:nth-child(3) section a:not(.article) img, html body div.ng-scope:nth-child(3) section section a:not(.article) img {
   max-width: 10rem;
   vertical-align: middle;
 }
 /* line 1, ../sass/_article.scss */
-html body div.ng-scope .modal {
+html body div.ng-scope:nth-child(3) .modal {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -658,7 +671,7 @@ html body div.ng-scope .modal {
   display: none;
 }
 /* line 11, ../sass/_article.scss */
-html body div.ng-scope .modal .message-box {
+html body div.ng-scope:nth-child(3) .modal .message-box {
   position: absolute;
   top: 0;
   left: 0;
@@ -675,7 +688,7 @@ html body div.ng-scope .modal .message-box {
 }
 @media screen and (max-width: 500px) {
   /* line 11, ../sass/_article.scss */
-  html body div.ng-scope .modal .message-box {
+  html body div.ng-scope:nth-child(3) .modal .message-box {
     height: 20rem;
     width: 15rem;
     margin-top: 40%;
@@ -684,27 +697,29 @@ html body div.ng-scope .modal .message-box {
   }
 }
 /* line 34, ../sass/_article.scss */
-html body div.ng-scope .modal .message-box .action {
+html body div.ng-scope:nth-child(3) .modal .message-box .action {
   display: inline-block;
   width: 48%;
   height: 8rem;
   padding-top: 2rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   vertical-align: top;
 }
 /* line 1, ../sass/_social.scss */
-html body div.ng-scope .modal .message-box .action .networks {
+html body div.ng-scope:nth-child(3) .modal .message-box .action .networks {
   padding-right: .5rem;
   float: right;
   display: inline-block;
   height: 1rem;
 }
 /* line 7, ../sass/_social.scss */
-html body div.ng-scope .modal .message-box .action .networks a {
+html body div.ng-scope:nth-child(3) .modal .message-box .action .networks a {
   cursor: pointer;
 }
 /* line 10, ../sass/_social.scss */
-html body div.ng-scope .modal .message-box .action .networks a .network {
+html body div.ng-scope:nth-child(3) .modal .message-box .action .networks a .network {
   display: inline-block;
   margin: 0.2rem 0;
   height: 2rem;
@@ -712,36 +727,36 @@ html body div.ng-scope .modal .message-box .action .networks a .network {
   background: url("/styles/resources/social.png") no-repeat;
 }
 /* line 17, ../sass/_social.scss */
-html body div.ng-scope .modal .message-box .action .networks a .network.google {
+html body div.ng-scope:nth-child(3) .modal .message-box .action .networks a .network.google {
   background-position: 2px -63px;
 }
 /* line 20, ../sass/_social.scss */
-html body div.ng-scope .modal .message-box .action .networks a .network.facebook {
+html body div.ng-scope:nth-child(3) .modal .message-box .action .networks a .network.facebook {
   background-position: 0 -1px;
 }
 /* line 23, ../sass/_social.scss */
-html body div.ng-scope .modal .message-box .action .networks a .network.twitter {
+html body div.ng-scope:nth-child(3) .modal .message-box .action .networks a .network.twitter {
   background-position: 0 -30px;
 }
 /* line 45, ../sass/_article.scss */
-html body div.ng-scope .modal .message-box .action .networks {
+html body div.ng-scope:nth-child(3) .modal .message-box .action .networks {
   float: none;
 }
 /* line 49, ../sass/_article.scss */
-html body div.ng-scope .modal .message-box .action:nth-child(2) {
+html body div.ng-scope:nth-child(3) .modal .message-box .action:nth-child(2) {
   border-right: 1px solid;
 }
 /* line 52, ../sass/_article.scss */
-html body div.ng-scope .modal .message-box .action:nth-child(3) {
+html body div.ng-scope:nth-child(3) .modal .message-box .action:nth-child(3) {
   text-align: center;
 }
 /* line 56, ../sass/_article.scss */
-html body div.ng-scope .modal .message-box .action .social {
+html body div.ng-scope:nth-child(3) .modal .message-box .action .social {
   display: inline-block;
   vertical-align: top;
 }
 /* line 61, ../sass/_article.scss */
-html body div.ng-scope .modal .message-box .action button {
+html body div.ng-scope:nth-child(3) .modal .message-box .action button {
   background: #fec71c;
   border: none;
   outline: none;
@@ -751,19 +766,19 @@ html body div.ng-scope .modal .message-box .action button {
 }
 @media screen and (max-width: 500px) {
   /* line 34, ../sass/_article.scss */
-  html body div.ng-scope .modal .message-box .action {
+  html body div.ng-scope:nth-child(3) .modal .message-box .action {
     display: block;
     width: auto;
   }
   /* line 74, ../sass/_article.scss */
-  html body div.ng-scope .modal .message-box .action:nth-child(2) {
+  html body div.ng-scope:nth-child(3) .modal .message-box .action:nth-child(2) {
     border-right: none;
     border-bottom: 1px solid;
   }
 }
-/* line 79, ../sass/app.scss */
+/* line 82, ../sass/app.scss */
 html body footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   text-align: center;
   width: 100%;
@@ -771,8 +786,11 @@ html body footer {
   color: white;
   padding: .5rem;
   border-top: 2px solid #888888;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-/* line 89, ../sass/app.scss */
+/* line 93, ../sass/app.scss */
 html body footer a {
   color: white;
 }

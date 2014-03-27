@@ -3,8 +3,7 @@
   color: $yellow;
   padding: .5rem;
   display: block;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
+  @include box-sizing(border-box);
   text-align: left;
   min-height: 3.5rem;
 

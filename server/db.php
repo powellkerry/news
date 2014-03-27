@@ -3,7 +3,7 @@
 class db {
     private $user = 'web';
     private $password = 'Zr%.Sv]BO&V4';
-    private $url = 'kerrywpowell.com';
+    private $url = 'newzrank.com';
     private $port = '3306';
     private $db = 'news';
 

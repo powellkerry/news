@@ -175,7 +175,7 @@ header.sub {
   &.toolbar {
     text-align: center;
     padding: .5rem;
-    box-sizing: border-box;
+    @include box-sizing(border-box);
     background: $black;
 
     h2 {
@@ -187,7 +187,7 @@ header.sub {
       padding: .5rem;
       background: $yellow;
       color: $black;
-      box-sizing: border-box;
+      @include box-sizing(border-box);
       margin-bottom: .5rem;
     }
     span.toggle {

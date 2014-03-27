@@ -45,7 +45,7 @@ class Articles {
         $db = new db();
         $connection = $db->connect();
         $stmt = $connection->prepare(
-            "SELECT a.*, AVG(((10 - f.bias)+f.quality+f.relevance)/3) AS avgRank, c.category_name,
+            "SELECT a.*, AVG(((10 - f.bias)+f.quality+f.relevance)/3) AS avgRank, c.category_name, c.category_id,
              AVG(10-f.bias) AS bias, AVG(f.quality) AS quality, AVG(f.relevance) AS relevance, COUNT(f.feedback_id) AS popularity
              FROM news_articles a
              LEFT JOIN news_feedback f ON (a.article_id = f.article_id)

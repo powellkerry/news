@@ -2,10 +2,71 @@
     <header class="sub toolbar">
         <h3>Read News By:</h3>
         <span class="toggle">
-            <button class="selected rank" ng-click="toggle($event, 'rank')">Rank</button>
+            <button class="selected section" ng-click="toggle($event, 'section')">Section</button>
+            <button class="rank" ng-click="toggle($event, 'rank')">Rank</button>
             <button class="org" ng-click="toggle($event, 'orgs')">Organization</button>
         </span>
     </header>
+
+<!---------- Section ------->
+
+    <section id="section" class="toggle">
+        <span class="toolbar">
+            <span class="buttons">
+                    <button class="menu" rel="options-section" ng-click="toggleOptions($event)"></button>
+            </span>
+            <div class="options options-section hidden">
+                <div class="field">
+                    <label for="search">Search: </label>
+                    <input type="search" id="search" ng-model="search">
+                </div>
+                <div class="field">
+                    <label>Section:</label>
+                        <span class="checkbox-group">
+                            <span ng-repeat="category in sectionCategories | orderBy">
+                                <input ng-if="isSelectedSectionCategory(category)" type="checkbox" id="{{category}}" checked="checked"
+                                       ng-click="updateSelectedSectionCategories($event)">
+                                <input ng-if="!isSelectedSectionCategory(category)" type="checkbox" id="{{category}}"
+                                       ng-click="updateSelectedSectionCategories($event)">
+                                <label for="{{category}}">{{category}}</label>
+                            </span>
+                        </span>
+                </div>
+            </div>
+            <div class="field">
+                <label>Go To:</label>
+                <select ng-model="selectedCategory" ng-change="goToSelectedCategory()">
+                    <option ng-repeat="category in selectedSectionCategories" value="{{category}}">{{category}}</option>
+                </select>
+            </div>
+        </span>
+        <div class="loading"></div>
+        <section class="feed" ng-repeat="category in selectedSectionCategories | orderBy">
+            <header class="expandable collapsed {{category}}" ng-click="toggleCategory($event)">
+                <h1>{{category}}</h1>
+            </header>
+            <div class="article-container">
+                <a itemscope itemtype="http://schema.org/Article" class="article"
+                   ng-click="setCurrentArticle(article.article, article.category_id, article.org_id, article.feed_id)"
+                   ng-repeat="article in sectionArticles | orderBy : sortBy : sortDirection() | filter : search"
+                   ng-if="article.category_name == category"
+                        >
+                    <article>
+                        <h2 itemprop="name">{{article.article.title}}</h2>
+                        <div class="org">{{article.org_name}}</div>
+                        <div itemprop="datePublished" class="date">{{article.article.publishedDate | date:'medium'}}</div>
+
+                        <img itemprop="image" ng-if="article.article.mediaGroups.length > 0" ng-src="{{article.article.mediaGroups[0].contents[0].url}}"/>
+                        <span itemprop="description" class="snippet">{{article.article.contentSnippet}}</span>
+                    </article>
+                </a>
+            </div>
+        </section>
+
+    </section>
+
+<!----- RANK -------->
+
     <section id="rank" class="toggle">
         <span class="toolbar">
             <span class="buttons">
@@ -52,7 +113,7 @@
             </header>
             <div class="article-container">
                 <a itemscope itemtype="http://schema.org/Article" class="article"
-                   ng-click="setCurrentArticle(article)"
+                   ng-click="setCurrentArticle(article, article.category_id)"
                    ng-repeat="article in articles | orderBy : sortBy : sortDirection() | filter : filter"
                    ng-if="article.category_name == category"
                 >
@@ -68,6 +129,9 @@
             </div>
         </section>
     </section>
+
+<!---------- ORG ------------->
+
     <section id="orgs" class="toggle">
         <span class="toolbar">
             <span class="buttons">

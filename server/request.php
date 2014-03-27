@@ -21,6 +21,10 @@ switch ($action) {
         $feeds = new Feeds();
         $feeds->read($post->org_id);
         break;
+    case 'readFeedsBySection' :
+        $feeds = new Feeds();
+        $feeds->readBySection();
+        break;
     case 'submitArticle' :
         $articles = new Articles();
         $article_id = $articles->exists($post->article);

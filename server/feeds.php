@@ -12,4 +12,15 @@ class Feeds {
         $db->sendResults($stmt);
     }
 
+    function readBySection() {
+        $db = new db();
+        $connection = $db->connect();
+        $stmt = $connection->prepare("SELECT f.feed_id, f.feed_url, o.org_name, o.org_id, c.category_id, c.category_name
+                                      FROM news_org_feeds f
+                                      JOIN news_orgs o ON(o.org_id=f.org_id)
+                                      JOIN news_categories c ON(c.category_id = f.category_id)
+                                      ORDER BY c.category_name");
+        $stmt->execute();
+        $db->sendResults($stmt);
+    }
 }

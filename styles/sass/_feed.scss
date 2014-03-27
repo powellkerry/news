@@ -136,3 +136,12 @@
     }
   }
 }
+.loading {
+  width: 15rem;
+  height: 15rem;
+  background: url(../resources/loading.gif) no-repeat;
+  background-color: transparent;
+  background-size: 15rem;
+  margin: 0px auto;
+  margin-top: 2rem;
+}

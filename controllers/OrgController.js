@@ -1,8 +1,13 @@
 var app = angular.module('topnews');
 
-app.controller('OrgController', function ($scope, $routeParams, $location, CategoryFactory, OrgFactory, ArticleFactory, MobileFactory) {
+app.controller('OrgController', function ($scope, $routeParams, $location, CategoryFactory, OrgFactory, ArticleFactory,
+                                          MobileFactory, FeedsFactory) {
     $scope.orgs = [];
     $scope.articles = [];
+    $scope.sectionArticles = [];
+    $scope.sectionCategories = [];
+    $scope.selectedSectionCategories = [];
+    $scope.selectedSectionCategory = '';
     $scope.categories = [];
     $scope.selectedCategories = [];
     $scope.sortBy = 'avgRank';
@@ -11,6 +16,14 @@ app.controller('OrgController', function ($scope, $routeParams, $location, Categ
     $scope.isSelectedCategory = function (category) {
         var value = false;
         if ($scope.selectedCategories.indexOf(category) !== -1) {
+            value = true;
+        }
+        return value;
+    };
+
+    $scope.isSelectedSectionCategory = function (category) {
+        var value = false;
+        if ($scope.selectedSectionCategories.indexOf(category) !== -1) {
             value = true;
         }
         return value;
@@ -35,6 +48,16 @@ app.controller('OrgController', function ($scope, $routeParams, $location, Categ
         }
         $scope.selectedCategories.sort();
         CategoryFactory.setCurrentCategories($scope.selectedCategories);
+    };
+
+    $scope.updateSelectedSectionCategories = function ($event) {
+        $check = $($event.currentTarget);
+        if ($check.attr('checked') === "checked" && $scope.selectedSectionCategories.indexOf($check.attr('id')) !== -1) {
+            $scope.selectedSectionCategories.splice($scope.selectedSectionCategories.indexOf($check.attr('id')), 1);
+        } else {
+            $scope.selectedSectionCategories.push($check.attr('id'));
+        }
+        $scope.selectedSectionCategories.sort();
     };
 
     $scope.sortDirection = function () {
@@ -128,6 +151,22 @@ app.controller('OrgController', function ($scope, $routeParams, $location, Categ
         });
     };
 
+    $scope.loadFeedSections = function () {
+        FeedsFactory.loadFeedsBySection(function (data) {
+            $scope.sectionArticles = data;
+            angular.forEach(data, function (article) {
+                if ($scope.selectedSectionCategories.indexOf(article.category_name) === -1) {
+                    $scope.selectedSectionCategories.push(article.category_name);
+                }
+                if ($scope.sectionCategories.indexOf(article.category_name) === -1) {
+                    $scope.sectionCategories.push(article.category_name);
+                }
+            });
+            $('.loading').hide();
+
+        });
+    };
+
     $scope.toggleCategory = function ($event) {
         $target = $($event.currentTarget);
         if ($target.hasClass('expanded')) {
@@ -156,11 +195,29 @@ app.controller('OrgController', function ($scope, $routeParams, $location, Categ
         $($event.target).addClass('selected');
         $('section.toggle').hide();
         $('#' + section).show();
+        if (section === 'orgs') {
+            $scope.loadOrgs();
+        } else if (section === 'rank') {
+            $scope.loadArticles();
+        } else if (section === 'section') {
+            $scope.loadFeedSections();
+        }
     };
 
-    $scope.setCurrentArticle = function (article) {
-        ArticleFactory.setCurrentArticle(article);
-        window.location = '/#/article/' + article.article_id;
+    $scope.setCurrentArticle = function (article, category_id, org_id, feed_id) {
+        if (article.article_id) {
+            window.location = '#/article/' + article.article_id;
+        } else {
+            if (!article.mediaGroups) {
+                article.mediaGroups = "";
+            }
+            article.category_id = category_id;
+            ArticleFactory.submitArticle(article, org_id, feed_id, function (data) {
+                article.article_id = data[0].article_id;
+                ArticleFactory.setCurrentArticle(article);
+                window.location = '#/article/' + data[0].article_id;
+            });
+        }
     };
 
     $scope.setCurrentOrg = function (org) {
@@ -174,11 +231,13 @@ app.controller('OrgController', function ($scope, $routeParams, $location, Categ
         return result === 0 ? '-' : result;
     };
 
-    $scope.loadOrgs();
-    $scope.loadArticles();
     if ($routeParams.toggle) {
         setTimeout(function () {
             $('button.' + $routeParams.toggle).trigger('click');
+        }, 500);
+    } else {
+        setTimeout(function () {
+            $('button.selected').trigger('click');
         }, 500);
     }
 });

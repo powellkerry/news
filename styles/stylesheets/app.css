@@ -628,6 +628,16 @@ html body div.ng-scope:nth-child(3) section.feed .article-container .snippet, ht
   max-height: 3.5rem;
   overflow: hidden;
 }
+/* line 139, ../sass/_feed.scss */
+html body div.ng-scope:nth-child(3) section .loading, html body div.ng-scope:nth-child(3) section section .loading {
+  width: 15rem;
+  height: 15rem;
+  background: url(../resources/loading.gif) no-repeat;
+  background-color: transparent;
+  background-size: 15rem;
+  margin: 0px auto;
+  margin-top: 2rem;
+}
 /* line 1, ../sass/_org.scss */
 html body div.ng-scope:nth-child(3) section a:not(.article), html body div.ng-scope:nth-child(3) section section a:not(.article) {
   height: 13rem;

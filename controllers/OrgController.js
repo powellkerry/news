@@ -101,7 +101,7 @@ app.controller('OrgController', function ($scope, $routeParams, $location, Categ
         ArticleFactory.loadArticles(function (data) {
             $scope.articles = data;
             if ($scope.articles.length === 0) {
-                if ($('.-a').length === 0) {
+                if ($('.no-articles').length === 0) {
                     $('#rank').append('<span class="no-articles">No articles have been ranked. Get the ball rolling by ranking an article!</span>');
                 }
             } else {

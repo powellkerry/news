@@ -4,6 +4,7 @@ app.controller('OrgController', function ($scope, $routeParams, $location, Categ
                                           MobileFactory, FeedsFactory) {
     $scope.orgs = [];
     $scope.articles = [];
+    $scope.headlines = [];
     $scope.sectionArticles = [];
     $scope.sectionCategories = [];
     $scope.selectedSectionCategories = [];
@@ -100,9 +101,9 @@ app.controller('OrgController', function ($scope, $routeParams, $location, Categ
         ArticleFactory.loadArticles(function (data) {
             $scope.articles = data;
             if ($scope.articles.length === 0) {
-                setTimeout(function () {
-                    $('.toolbar .toggle .org').trigger('click');
-                }, 500);
+                if ($('.-a').length === 0) {
+                    $('#rank').append('<span class="no-articles">No articles have been ranked. Get the ball rolling by ranking an article!</span>');
+                }
             } else {
                 var selectedArticle = ArticleFactory.getCurrentArticle(),
                     prevCategories = CategoryFactory.getCurrentCategories(),
@@ -153,7 +154,7 @@ app.controller('OrgController', function ($scope, $routeParams, $location, Categ
 
     $scope.loadFeedSections = function () {
         FeedsFactory.loadFeedsBySection(function (data) {
-            $scope.sectionArticles = data;
+            $scope.headlines = data;
             angular.forEach(data, function (article) {
                 if ($scope.selectedSectionCategories.indexOf(article.category_name) === -1) {
                     $scope.selectedSectionCategories.push(article.category_name);
@@ -163,11 +164,19 @@ app.controller('OrgController', function ($scope, $routeParams, $location, Categ
                 }
             });
             $('.loading').hide();
-
         });
     };
 
-    $scope.toggleCategory = function ($event) {
+    $scope.loadSectionArticles = function (section) {
+        $scope.sectionArticles = [];
+        angular.forEach($scope.headlines, function (article) {
+            if (article.category_name === section) {
+                $scope.sectionArticles.push(article);
+            }
+        });
+    };
+
+    $scope.toggleCategory = function ($event, section) {
         $target = $($event.currentTarget);
         if ($target.hasClass('expanded')) {
             $target.removeClass('expanded');
@@ -182,6 +191,9 @@ app.controller('OrgController', function ($scope, $routeParams, $location, Categ
             $target.removeClass('collapsed');
             $target.addClass('expanded');
             $target.siblings().show();
+        }
+        if (section) {
+            $scope.loadSectionArticles(section);
         }
     };
 

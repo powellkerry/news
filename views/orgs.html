@@ -42,7 +42,7 @@
         </span>
         <div class="loading"></div>
         <section class="feed" ng-repeat="category in selectedSectionCategories | orderBy">
-            <header class="expandable collapsed {{category}}" ng-click="toggleCategory($event)">
+            <header class="expandable collapsed {{category}}" ng-click="toggleCategory($event, category)">
                 <h1>{{category}}</h1>
             </header>
             <div class="article-container">

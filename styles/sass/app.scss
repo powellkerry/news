@@ -33,6 +33,15 @@ html {
       margin-bottom: 3rem;
       min-height: 35.5rem;
 
+      .no-articles {
+        width: 100%;
+        margin: 0px auto;
+        font-size: 1.25rem;
+        margin-top: 1rem;
+        display: inline-block;
+        text-align: center;
+      }
+
       .page-container {
         width: 100%;
         max-width: 57rem;
